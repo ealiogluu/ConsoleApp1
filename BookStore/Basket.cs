@@ -11,50 +11,21 @@ namespace BookStore
 {
     internal class Basket
     {
-        public static List<Book> books = new List<Book>();  
+        public static List<Book> books = new List<Book>(); 
+
         public void Add()
         {
             Console.WriteLine("add book to basket that you want. ");
             string name = Console.ReadLine();
 
-            Book book = BookStore.Books.FirstOrDefault(b => b.Name == name);
-            books.Add(book);
-        }
-
-
-
-        //public void Remove(string bookName)
-        //{
-        //    bool isRemoved = books.Remove(books.First(b => b.Name == bookName));
-        //    if (isRemoved) Console.WriteLine("Removed");
-
-        //    //foreach (var a in books)
-        //    //{
-        //    //    if(a.Name == bookName)
-        //    //    {
-        //    //        books.Remove(a);
-        //    //        Console.WriteLine(bookName+" removed.");
-        //    //    }
-        //    //}
-        //}
-
-        public void SearchBooks()
-        {
-            Console.WriteLine("Search book that you want.\n");
-            string name = Console.ReadLine();
-
-            foreach (var a in books)
+            foreach (Book book in BookStore.Books)
             {
-                if (a.Name == name)
+                if (book.Name == name)
                 {
-                    Console.WriteLine("\n" + name + " is available in your basket!");
-                    return;
+                    books.Add(book);
                 }
             }
-
-            Console.WriteLine("\n" + name + " is not available in your basket!\n");
         }
-
         public double GetTotalPrice()
         {
             double totalPrice = 0;
@@ -64,7 +35,6 @@ namespace BookStore
             }
             return totalPrice;
         }
-
         public void DisplayBasketInfo()
         {
             Console.WriteLine("\t\tBASKET");
@@ -81,6 +51,8 @@ namespace BookStore
             Console.WriteLine("------------------------------------------");
             double t = GetTotalPrice();
             Console.WriteLine("\tTotal Price: " + t);
+
         }
+
     }
 }

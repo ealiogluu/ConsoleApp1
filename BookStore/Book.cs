@@ -12,9 +12,7 @@ namespace BookStore
         public string Writer { get; set; }
         public string Category { get; set; }
         public double Price { get; set; }
-
         public Book() { }
-
         public Book(string name, int pageCount, string writer, string category, double price )
         {
             Name = name;
@@ -24,7 +22,6 @@ namespace BookStore
             Price = price;
                 
         }
-
         public void DisplayInfo()
         {
             Console.WriteLine("***Book Info***");
@@ -35,5 +32,8 @@ namespace BookStore
             Console.WriteLine("Category\t: " + Category);
             Console.WriteLine("Price\t\t: " + Price);
         }
+
+
+
     }
 }

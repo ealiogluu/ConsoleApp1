@@ -4,13 +4,10 @@ namespace BookStore
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            
             BookStore bookStore = new BookStore();
-            Customer customer= new Customer();
-
-            customer.DisplayMainMenu();
+            bookStore.LogIn();
 
             Console.ReadLine();
         }

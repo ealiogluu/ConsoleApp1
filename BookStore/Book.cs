@@ -32,8 +32,5 @@ namespace BookStore
             Console.WriteLine("Category\t: " + Category);
             Console.WriteLine("Price\t\t: " + Price);
         }
-
-
-
     }
 }

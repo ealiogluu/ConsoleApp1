@@ -32,7 +32,8 @@ namespace BookStore
         }
         public void DisplayMainMenu()
         {
-            Console.WriteLine("Select process that you want to do\n*******");
+            Console.WriteLine("Select process that you want to do:");
+            Console.WriteLine("------------------------------------------------");
             Console.WriteLine("1- Display all books and their prices.");
             Console.WriteLine("2- Add to basket books.");
             Console.WriteLine("3- Remove from basket books.");
@@ -79,8 +80,10 @@ namespace BookStore
 
             foreach (Book book in BookStore.Books)
             {
-                Console.WriteLine(book.Name + "\t\t" + book.PageCount + "\t\t" + book.Price + "\n");
+                Console.WriteLine(book.Name + "\t\t" + book.PageCount + "\t\t" + book.Price);
             }
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine( );
         }
         public void Remove()
         {
@@ -103,11 +106,8 @@ namespace BookStore
         public void DisplayOwnInfo()
         {
             Console.WriteLine("***MY INFORMATIONS***\n");
-
             Console.WriteLine("Name and Surname: " + Name);
-
             Console.WriteLine("Phone Number: " + PhoneNumber);
-
             Console.WriteLine("Adress: " + Adress);
             Console.WriteLine();
         }
@@ -118,8 +118,9 @@ namespace BookStore
 
             Console.WriteLine("Enter the 1 for check out or 2 for return.");
             int choose = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
 
-            if (choose == 1) Console.WriteLine("Your order is checked out.");
+            if (choose == 1) Console.WriteLine("Your order is checked out.\n");
             else DisplayMainMenu();
 
         }

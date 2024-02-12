@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace BookStore
 {
@@ -51,6 +45,7 @@ namespace BookStore
             Console.WriteLine("------------------------------------------");
             double t = GetTotalPrice();
             Console.WriteLine("\tTotal Price: " + t);
+            Console.WriteLine();
 
         }
 

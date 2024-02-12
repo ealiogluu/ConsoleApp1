@@ -8,5 +8,7 @@ namespace BookStore
 {
     internal class Class1
     {
+
+        int abc = 4;
     }
 }

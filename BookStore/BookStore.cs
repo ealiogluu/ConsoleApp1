@@ -11,22 +11,23 @@ namespace BookStore
     {
         public List<Customer> Customers = new List<Customer>();
         public static List<Book> Books = new List<Book>();
-
-      
-       
         public BookStore()
         {
-            Book book1 = new Book("KİTAP", 23, "KİM", "ROMAN", 24);
-            Book book2 = new Book("anne", 15, "baba", "hikaye", 78);
-            Book book3 = new Book("arc", 15, "fgh", "hikaye", 56);
-            Book book4 = new Book("kardes", 190, "baba", "hikaye", 19);
-            Book book5 = new Book("boy", 167, "baba", "hikaye", 78);
+            //Book book1 = new Book();
+            //Book book2 = new Book();
+            //Book book3 = new Book();
+            //Book book4 = new Book();
+            //Book book5 = new Book();
+            //Book book6 = new Book();
+            //Book book7 = new Book();
+            //Book book8 = new Book();
+            //Book book9 = new Book();
 
-            Books.Add(book1);
-            Books.Add(book2);
-            Books.Add(book3);
-            Books.Add(book4);
-            Books.Add(book5);
+            //Books.Add(book1);
+            //Books.Add(book2);
+            //Books.Add(book3);
+            //Books.Add(book4);
+            //Books.Add(book5);
 
             Customer customer1 = new Customer("Emine Nur Alioğlu","Barıs mah.",5337161659,1234);
             Customer customer2 = new Customer("Ayse Kaya","baris",5306639944,567);
@@ -39,9 +40,7 @@ namespace BookStore
             Customers.Add(customer3);
             Customers.Add(customer4);
             Customers.Add(customer5);
-
         }
-  
         public void DisplayMainMenu()
         {
 
@@ -125,6 +124,29 @@ namespace BookStore
                 if (password== 1234567) DisplayMainMenu();
                 else Console.WriteLine("Password is wrong!");
             }
+        }
+        public void UserLogIn()
+        {
+            Console.Write("name and surname: ");
+            string chooseName = Console.ReadLine();
+            Console.WriteLine("Password: ");
+            int choosePassword = Convert.ToInt32(Console.ReadLine());
+
+            foreach (Customer customer in Customers)
+            {
+                if (customer.Name == chooseName && customer.Password == choosePassword)
+                {
+                    customer.DisplayMainMenu();
+                    return;
+                }
+            }
+            Console.WriteLine("Password is wrong!\n");
+
+
+        }
+        public void UserProcess()
+        {
+
         }
         public void AddNewBook()
         {
@@ -238,6 +260,10 @@ namespace BookStore
                 Console.WriteLine();
             }
         }
-  
+
+        public void FilterBooks()
+        {
+            Console.WriteLine();
+        }
     }
 }

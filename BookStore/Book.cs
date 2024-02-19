@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BookStore
 {
@@ -10,17 +11,18 @@ namespace BookStore
         public string Name { get; set; }
         public int PageCount { get; set; }
         public string Writer { get; set; }
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }    
         public double Price { get; set; }
         public Book() { }
-        public Book(string name, int pageCount, string writer, string category, double price )
+        public Book(string name, int pageCount, string writer, string category, double price, int categoryId, string categoryName)
         {
             Name = name;
             PageCount = pageCount;
-            Writer = writer;
-            Category = category;
+            Writer = writer; 
+            CategoryId = categoryId;
+            CategoryName = categoryName;
             Price = price;
-                
         }
         public void DisplayInfo()
         {
@@ -29,7 +31,7 @@ namespace BookStore
             Console.WriteLine("Book Name\t: "+Name);
             Console.WriteLine("Papers\t\t: "+PageCount);
             Console.WriteLine("Writer\t\t: "+Writer);
-            Console.WriteLine("Category\t: " + Category);
+            Console.WriteLine("Category\t: " + CategoryId);
             Console.WriteLine("Price\t\t: " + Price);
         }
     }

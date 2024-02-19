@@ -6,7 +6,6 @@ namespace BookStore
     internal class Basket
     {
         public static List<Book> books = new List<Book>(); 
-
         public void Add()
         {
             Console.WriteLine("add book to basket that you want. ");
@@ -48,6 +47,5 @@ namespace BookStore
             Console.WriteLine();
 
         }
-
     }
 }

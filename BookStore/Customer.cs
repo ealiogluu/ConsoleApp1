@@ -111,7 +111,6 @@ namespace BookStore
             Console.WriteLine("Adress: " + Adress);
             Console.WriteLine();
         }
-
         public void CheckOut()
         {
             basket.DisplayBasketInfo();

@@ -16,18 +16,22 @@ namespace BookStore
             Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1);
             Book book2 = new Book("Suç ve Ceza", 650, "Dostoyevski", "Novel", 250, 1);
             Book book3 = new Book("İçimizdeki Şeytan", 67, "Sabahattin Ali", "Novel", 45, 1);
-            Book book4 = new Book("Şiir'k",23,"Furkan Dowan","Poem",77,2);
-            Book book5 = new Book("Tek Şiir",56,"Halil Şahan","Poem",112,2);
-            Book book6 = new Book("Şiir Çıplak",90,"Veysel çolak","Poem",120,2);
+            Book book4 = new Book("Şiir'k", 23, "Furkan Dowan", "Poem", 77, 2);
+            Book book5 = new Book("Tek Şiir", 56, "Halil Şahan", "Poem", 112, 2);
+            Book book6 = new Book("Şiir Çıplak", 90, "Veysel çolak", "Poem", 120, 2);
             Book book7 = new Book("Uzun Hikaye", 25, "Mustafa Kutlu", "Story", 34, 3);
             Book book8 = new Book("Hikaye", 67, "Halit Ziya Uşaklıgil", "Story", 70, 3);
             Book book9 = new Book("Hikayeden Hatıraya", 34, "hüseyin Hüsnü Yazıcı", "Story", 50, 3);
 
-            //Books.Add(book1);
-            //Books.Add(book2);
-            //Books.Add(book3);
-            //Books.Add(book4);
-            //Books.Add(book5);
+            Books.Add(book1);
+            Books.Add(book2);
+            Books.Add(book3);
+            Books.Add(book4);
+            Books.Add(book5);
+            Books.Add(book6);
+            Books.Add(book7);
+            Books.Add(book8);
+            Books.Add(book9);
 
             Customer customer1 = new Customer("Emine Nur Alioğlu", "Barıs mah.", 5337161659, 1234);
             Customer customer2 = new Customer("Ayse Kaya", "baris", 5306639944, 567);
@@ -272,13 +276,67 @@ namespace BookStore
 
             int choose = Convert.ToInt32(Console.ReadLine());
 
-            //foreach (var book in Books)
-            //{
-            //    if (choose == 1 )
-            //    {
-            //        cw
-            //    }
-            //}
+            Console.WriteLine("\t\tAll Books That You FiLtered");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Book Name   |   Category   |   Page Count");
+            Console.WriteLine("------------------------------------------------\n");
+
+            foreach(Book book in Books)
+            {
+                if (book.CategoryId == choose)
+                {
+                    Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine();
+                    
+                }
+                else if (book.CategoryId== choose)
+                {
+                    Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine();
+                    
+                }
+                else if (book.CategoryId==choose)
+                {
+                    Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine();
+                    
+                }
+            }
+
+            if (choose == 1)
+            {
+
+
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.CategoryId == 1)
+                    {
+                        
+                    }
+                }
+            }
+            else if (choose == 2)
+            {
+                Console.WriteLine("\t\tAll Books That You FiLtered");
+                Console.WriteLine("------------------------------------------------");
+                Console.WriteLine("Book Name   |   Category   |   Page Count");
+                Console.WriteLine("------------------------------------------------\n");
+
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.CategoryId == 1)
+                    {
+                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
+                        Console.WriteLine("------------------------------------------------");
+                        Console.WriteLine();
+                        return;
+                    }
+                }
+
+            }
         }
         public void SignIn()
         {

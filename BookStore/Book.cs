@@ -14,7 +14,7 @@ namespace BookStore
         public int CategoryId { get; set; }
         public string Category { get; set; }    
         public double Price { get; set; }
-        //public Book() { }
+        public Book() { }
         public Book(string name, int pageCount, string writer, string category, double price, int categoryId)
         {
             Name = name;

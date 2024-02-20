@@ -7,7 +7,7 @@ namespace BookStore
         static void Main()
         {
             BookStore bookStore = new BookStore();
-            bookStore.LogIn();
+            bookStore.LogInToSystem();
 
             Console.ReadLine();
         }

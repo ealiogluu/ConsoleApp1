@@ -29,11 +29,11 @@ namespace BookStore
             //Books.Add(book4);
             //Books.Add(book5);
 
-            Customer customer1 = new Customer("Emine Nur Alioğlu","Barıs mah.",5337161659,1234);
-            Customer customer2 = new Customer("Ayse Kaya","baris",5306639944,567);
-            Customer customer3 = new Customer("emine kaya","guzelyali",5306630375,3456);
-            Customer customer4 = new Customer("esma alioğlu","baris",5339630561,897);
-            Customer customer5 = new Customer("sude akar","gunesli",6305785632,4567);
+            Customer customer1 = new Customer("Emine Nur Alioğlu", "Barıs mah.", 5337161659, 1234);
+            Customer customer2 = new Customer("Ayse Kaya", "baris", 5306639944, 567);
+            Customer customer3 = new Customer("emine kaya", "guzelyali", 5306630375, 3456);
+            Customer customer4 = new Customer("esma alioğlu", "baris", 5339630561, 897);
+            Customer customer5 = new Customer("sude akar", "gunesli", 6305785632, 4567);
 
             Customers.Add(customer1);
             Customers.Add(customer2);
@@ -75,54 +75,37 @@ namespace BookStore
             {
                 DisplayAllBooks();
             }
-            else if(choose == "5")
+            else if (choose == "5")
             {
                 DisplayAllCustomers();
             }
-            else if(choose =="6")
+            else if (choose == "6")
             {
                 AddNewCustomer();
             }
-            else if (choose=="7")
+            else if (choose == "7")
             {
                 RemoveCustomer();
             }
-            else if (choose=="8")
+            else if (choose == "8")
             {
                 SearchBook();
             }
             DisplayMainMenu();
         }
-        public void LogIn()
+        public void LogInToSystem()
         {
             Console.WriteLine("User menu: 1");
             Console.WriteLine("Employee menu: 2");
-            int secim= Convert.ToInt32(Console.ReadLine());
+            int secim = Convert.ToInt32(Console.ReadLine());
 
             if (secim == 1)
             {
-                Console.Write("name and surname: ");
-                string chooseName = Console.ReadLine();
-                Console.WriteLine("Password: ");
-                int choosePassword = Convert.ToInt32(Console.ReadLine());
-
-                foreach (Customer customer in Customers)
-                {
-                    if (customer.Name == chooseName && customer.Password == choosePassword)
-                    {
-                        customer.DisplayMainMenu();
-                        return;
-                    }
-                }
-                Console.WriteLine("Password is wrong!");
+                UserProcess();
             }
             else if (secim == 2)
             {
-                Console.Write("System Password: ");
-                double password = Convert.ToDouble(Console.ReadLine());
-
-                if (password== 1234567) DisplayMainMenu();
-                else Console.WriteLine("Password is wrong!");
+                EmployeeLogIn();
             }
         }
         public void UserLogIn()
@@ -140,12 +123,32 @@ namespace BookStore
                     return;
                 }
             }
-            Console.WriteLine("Password is wrong!\n");
+            Console.WriteLine("Password is wrong!Please try again.\n");
+            UserLogIn();
+        }
+        public void EmployeeLogIn()
+        {
+            Console.Write("System Password: ");
+            double password = Convert.ToDouble(Console.ReadLine());
 
-
+            if (password == 1234567) DisplayMainMenu();
+            else Console.WriteLine("Password is wrong! Please try again.\n");
+            EmployeeLogIn();
         }
         public void UserProcess()
         {
+            Console.WriteLine("1- Sign in.");
+            Console.WriteLine("2- Log in.");
+            int choose = Convert.ToInt32(Console.ReadLine());
+
+            if (choose == 1)
+            {
+                SignIn();
+            }
+            else if (choose == 2)
+            {
+                UserLogIn();
+            }
 
         }
         public void AddNewBook()
@@ -169,7 +172,7 @@ namespace BookStore
             Books.Add(book);
             Console.WriteLine();
         }
-        public void AddNewCustomer() 
+        public void AddNewCustomer()
         {
             Customer customer = new Customer();
 
@@ -215,7 +218,7 @@ namespace BookStore
 
             foreach (Customer customer in Customers)
             {
-                if (customer.Name== choose)
+                if (customer.Name == choose)
                 {
                     Customers.Remove(customer);
                     return;
@@ -252,7 +255,7 @@ namespace BookStore
         public void DisplayAllCustomers()
         {
             Console.WriteLine("***CUSTOMER INFORMATIONS***\n");
-            foreach (var customer in Customers )
+            foreach (var customer in Customers)
             {
                 Console.WriteLine("Customer Name and Surname: " + customer.Name);
                 Console.WriteLine("Customer Phone Number: " + customer.PhoneNumber);
@@ -260,10 +263,34 @@ namespace BookStore
                 Console.WriteLine();
             }
         }
-
         public void FilterBooks()
         {
+            Console.WriteLine("Which types of books that you want");
+
+        }
+        public void SignIn()
+        {
+            Customer customer = new Customer();
+
+            Console.WriteLine("Enter your informations.\n ");
+
+            Console.Write("Name and Surname:  ");
+            customer.Name = Console.ReadLine();
+
+            Console.Write("Adress: ");
+            customer.Adress = Console.ReadLine();
+
+            Console.Write("Phone Number: ");
+            customer.PhoneNumber = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Password: ");
+            customer.Password = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine();
+
+            Customers.Add(customer);
+
+            Console.WriteLine("Please log in.");
+            UserLogIn();
         }
     }
 }

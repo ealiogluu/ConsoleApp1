@@ -13,15 +13,15 @@ namespace BookStore
         public static List<Book> Books = new List<Book>();
         public BookStore()
         {
-            //Book book1 = new Book();
-            //Book book2 = new Book();
-            //Book book3 = new Book();
-            //Book book4 = new Book();
-            //Book book5 = new Book();
-            //Book book6 = new Book();
-            //Book book7 = new Book();
-            //Book book8 = new Book();
-            //Book book9 = new Book();
+            Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1);
+            Book book2 = new Book("Suç ve Ceza", 650, "Dostoyevski", "Novel", 250, 1);
+            Book book3 = new Book("İçimizdeki Şeytan", 67, "Sabahattin Ali", "Novel", 45, 1);
+            Book book4 = new Book("Şiir'k",23,"Furkan Dowan","Poem",77,2);
+            Book book5 = new Book("Tek Şiir",56,"Halil Şahan","Poem",112,2);
+            Book book6 = new Book("Şiir Çıplak",90,"Veysel çolak","Poem",120,2);
+            Book book7 = new Book("Uzun Hikaye", 25, "Mustafa Kutlu", "Story", 34, 3);
+            Book book8 = new Book("Hikaye", 67, "Halit Ziya Uşaklıgil", "Story", 70, 3);
+            Book book9 = new Book("Hikayeden Hatıraya", 34, "hüseyin Hüsnü Yazıcı", "Story", 50, 3);
 
             //Books.Add(book1);
             //Books.Add(book2);
@@ -265,8 +265,20 @@ namespace BookStore
         }
         public void FilterBooks()
         {
-            Console.WriteLine("Which types of books that you want");
+            Console.WriteLine("Which types of books do you want?");
+            Console.WriteLine("1-Novels.");
+            Console.WriteLine("2-Poems.");
+            Console.WriteLine("3-Stories.");
 
+            int choose = Convert.ToInt32(Console.ReadLine());
+
+            //foreach (var book in Books)
+            //{
+            //    if (choose == 1 )
+            //    {
+            //        cw
+            //    }
+            //}
         }
         public void SignIn()
         {

@@ -12,17 +12,17 @@ namespace BookStore
         public int PageCount { get; set; }
         public string Writer { get; set; }
         public int CategoryId { get; set; }
-        public string CategoryName { get; set; }    
+        public string Category { get; set; }    
         public double Price { get; set; }
-        public Book() { }
-        public Book(string name, int pageCount, string writer, string category, double price, int categoryId, string categoryName)
+        //public Book() { }
+        public Book(string name, int pageCount, string writer, string category, double price, int categoryId)
         {
             Name = name;
             PageCount = pageCount;
             Writer = writer; 
-            CategoryId = categoryId;
-            CategoryName = categoryName;
+            Category = category;
             Price = price;
+            CategoryId = categoryId;
         }
         public void DisplayInfo()
         {

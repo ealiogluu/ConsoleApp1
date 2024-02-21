@@ -14,15 +14,15 @@ namespace BookStore
 
         public BookStore()
         {
-            Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,"Can");
-            Book book2 = new Book("Suç ve Ceza", 650, "Dostoyevski", "Novel", 250, 1,"Can");
-            Book book3 = new Book("İçimizdeki Şeytan", 67, "Sabahattin Ali", "Novel", 45, 1, "Can");
-            Book book4 = new Book("Şiir'k", 23, "Furkan Dowan", "Poem", 77, 2, "Can");
-            Book book5 = new Book("Tek Şiir", 56, "Halil Şahan", "Poem", 112, 2, "Can");
-            Book book6 = new Book("Şiir Çıplak", 90, "Veysel çolak", "Poem", 120, 2, "Can");
-            Book book7 = new Book("Uzun Hikaye", 25, "Mustafa Kutlu", "Story", 34, 3, "Can");
-            Book book8 = new Book("Hikaye", 67, "Halit Ziya Uşaklıgil", "Story", 70, 3, "Can");
-            Book book9 = new Book("Hikayeden Hatıraya", 34, "hüseyin Hüsnü Yazıcı", "Story", 50, 3, "Can");
+            Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,"Can Yayınları");
+            Book book2 = new Book("Suç ve Ceza", 650, "Dostoyevski", "Novel", 250, 1, "Yapı Kredi Yayınları");
+            Book book3 = new Book("İçimizdeki Şeytan", 67, "Sabahattin Ali", "Novel", 45, 1, "Everest Yayınları");
+            Book book4 = new Book("Şiir'k", 23, "Furkan Dowan", "Poem", 77, 2, "Can Yayınları");
+            Book book5 = new Book("Tek Şiir", 56, "Halil Şahan", "Poem", 112, 2, "Everest Yayınları");
+            Book book6 = new Book("Şiir Çıplak", 90, "Veysel çolak", "Poem", 120, 2, "Yapı Kredi Yayınları");
+            Book book7 = new Book("Uzun Hikaye", 25, "Mustafa Kutlu", "Story", 34, 3, "Can Yayınları");
+            Book book8 = new Book("Hikaye", 67, "Halit Ziya Uşaklıgil", "Story", 70, 3, "İş Bankası Yayınları");
+            Book book9 = new Book("Hikayeden Hatıraya", 34, "hüseyin Hüsnü Yazıcı", "Story", 50, 3, "Yapı Kredi Yayınları");
 
             Books.Add(book1);
             Books.Add(book2);
@@ -297,10 +297,6 @@ namespace BookStore
                 }
             }
             Console.WriteLine("Customer is removed.");
-        }
-        public void DisplayPublisher()
-        {
-
         }
     }
 }

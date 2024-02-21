@@ -10,7 +10,6 @@ namespace BookStore
 {
     internal class Customer
     {
-
         public Customer()
         {
             basket = new Basket();
@@ -36,13 +35,15 @@ namespace BookStore
             Console.WriteLine("\nSelect process that you want to do:");
             Console.WriteLine("------------------------------------------------");
             Console.WriteLine("1- Display all books and their prices.");
-            Console.WriteLine("2- Add to basket books.");
-            Console.WriteLine("3- Remove from basket books.");
-            Console.WriteLine("4- Display basket.");
-            Console.WriteLine("5- Check Out the my order.");
-            Console.WriteLine("6- Display my own informations.");
-            Console.WriteLine("7- Filter books.");
-            Console.WriteLine("8- Filter price.\n");
+            Console.WriteLine("2- Display all publishers.");
+            Console.WriteLine("3- Add to basket books.");
+            Console.WriteLine("4- Remove from basket books.");
+            Console.WriteLine("5- Display basket.");
+            Console.WriteLine("6- Check Out the my order.");
+            Console.WriteLine("7- Display my own informations.");
+            Console.WriteLine("8- Filter genre of books.");
+            Console.WriteLine("9- Filter publishers.");
+            Console.WriteLine("10- Filter price.\n");
 
             string choose = Console.ReadLine();
             Console.WriteLine();
@@ -53,30 +54,37 @@ namespace BookStore
             }
             else if (choose == "2")
             {
-                basket.Add();
+                DisplayAllPublishers();   
             }
             else if (choose == "3")
             {
-                Remove();
+                basket.Add();
             }
             else if (choose == "4")
             {
-                basket.DisplayBasketInfo();
+                Remove();
             }
             else if (choose == "5")
             {
-                CheckOut();
+                basket.DisplayBasketInfo();
             }
             else if (choose == "6")
             {
-                DisplayOwnInfo();
+                CheckOut();
             }
             else if (choose == "7")
             {
-                BookStore bookStore = new BookStore();
-                FilterCategories();
+                DisplayOwnInfo();
             }
             else if (choose == "8")
+            {
+                FilterGenres();
+            }
+            else if (choose== "9")
+            {
+                FilterPublisher();
+            }
+            else if (choose== "10")
             {
                 FilterPrice();
             }
@@ -97,7 +105,7 @@ namespace BookStore
             Console.WriteLine("------------------------------------------------");
             Console.WriteLine();
 
-            FilterCategories();
+            FilterGenres();
         }
         public void Remove()
         {
@@ -137,7 +145,7 @@ namespace BookStore
             else DisplayMainMenu();
 
         }
-        public void FilterCategories()
+        public void FilterGenres()
         {
             Console.WriteLine("Which types of books do you want?");
             Console.WriteLine("1-Novels.");
@@ -220,6 +228,8 @@ namespace BookStore
                         Console.WriteLine();
                     }
                 }
+                
+                Console.WriteLine("There is no book in this interval.");
             }
             else if (choose == 2)
             {
@@ -255,11 +265,42 @@ namespace BookStore
                         Console.WriteLine("------------------------------------------------");
                         Console.WriteLine();
                     }
+                    return;
+                }
+                Console.WriteLine("There is no book in this interval.");
+            }
+        }
+        public void FilterPublisher()
+        {
+            Console.WriteLine("Which publisher of books do you search?");
+            string choose = Console.ReadLine();
+
+            Console.WriteLine("\tAll Books That You FiLtered to Publisher");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Publisher  |   Book Name   |   Writer");
+            Console.WriteLine("------------------------------------------------\n");
+
+            foreach (Book book in BookStore.Books)
+            {
+                if (choose== book.Publisher)
+                {
+                    Console.WriteLine(book.Publisher + book.Name + book.Writer);
                 }
             }
+            Console.WriteLine("------------------------------------------------\n");
         }
         public void DisplayAllPublishers()
         {
-            
+            Console.WriteLine("\tAll Publishers");
+            Console.WriteLine("-------------------------------\n");
+            Console.WriteLine("Publisher Name");
+            Console.WriteLine("-------------------------------");
+
+            foreach (Publisher publisher in Publisher.Publishers)
+            {
+                Console.WriteLine(publisher.PublishName);
+            }
+            Console.WriteLine("-------------------------------\n");
         }
+    }
 }

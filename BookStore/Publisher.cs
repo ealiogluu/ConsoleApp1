@@ -8,13 +8,12 @@ namespace BookStore
 {
     internal class Publisher
     {
-        public string Publish;
+        public string PublishName;
 
         public static List<Publisher> Publishers = new List<Publisher>();
-
-        public Publisher(string publish)
+        public Publisher(string publishName)
         {
-            Publish=publish;
+            PublishName = publishName;
 
             Publisher publish1 = new Publisher("Can Yayınları");
             Publisher publish2 = new Publisher("İş Bankası Yayınları");

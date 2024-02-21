@@ -208,8 +208,6 @@ namespace BookStore
         {
             int choose = DisplayFilterPriceHeaders();
 
-            //BookFilterFactory.GetBookFilter(choose).Filter();
-
             DoFilterByChoose(choose);
         }
         private static int DisplayFilterPriceHeaders()
@@ -228,15 +226,15 @@ namespace BookStore
             Console.WriteLine("------------------------------------------------\n");
             return choose;
         }
-        private void DoFilterByChoose(int x)
+        private void DoFilterByChoose(int choose)
         {
             IBookFilter filter = null;
 
-            if (x == 1)      filter = new BookFilter0_100();
-            else if (x == 2) filter = new BookFilter100_200();
-            else if (x == 3) filter = new BookFilter200_500();
-            else if (x == 4) filter = new BookFilter500Plus();
-            else if (x == 5) filter = new BookFilter1000Plus();
+            if (choose == 1)      filter = new BookFilter0_100();
+            else if (choose == 2) filter = new BookFilter100_200();
+            else if (choose == 3) filter = new BookFilter200_500();
+            else if (choose == 4) filter = new BookFilter500Plus();
+            else if (choose == 5) filter = new BookFilter1000Plus();
 
             filter.Filter();
         }

@@ -11,17 +11,18 @@ namespace BookStore
     {
         public List<Customer> Customers = new List<Customer>();
         public static List<Book> Books = new List<Book>();
+
         public BookStore()
         {
-            Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,);
-            Book book2 = new Book("Suç ve Ceza", 650, "Dostoyevski", "Novel", 250, 1);
-            Book book3 = new Book("İçimizdeki Şeytan", 67, "Sabahattin Ali", "Novel", 45, 1);
-            Book book4 = new Book("Şiir'k", 23, "Furkan Dowan", "Poem", 77, 2);
-            Book book5 = new Book("Tek Şiir", 56, "Halil Şahan", "Poem", 112, 2);
-            Book book6 = new Book("Şiir Çıplak", 90, "Veysel çolak", "Poem", 120, 2);
-            Book book7 = new Book("Uzun Hikaye", 25, "Mustafa Kutlu", "Story", 34, 3);
-            Book book8 = new Book("Hikaye", 67, "Halit Ziya Uşaklıgil", "Story", 70, 3);
-            Book book9 = new Book("Hikayeden Hatıraya", 34, "hüseyin Hüsnü Yazıcı", "Story", 50, 3);
+            Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,"Can");
+            Book book2 = new Book("Suç ve Ceza", 650, "Dostoyevski", "Novel", 250, 1,"Can");
+            Book book3 = new Book("İçimizdeki Şeytan", 67, "Sabahattin Ali", "Novel", 45, 1, "Can");
+            Book book4 = new Book("Şiir'k", 23, "Furkan Dowan", "Poem", 77, 2, "Can");
+            Book book5 = new Book("Tek Şiir", 56, "Halil Şahan", "Poem", 112, 2, "Can");
+            Book book6 = new Book("Şiir Çıplak", 90, "Veysel çolak", "Poem", 120, 2, "Can");
+            Book book7 = new Book("Uzun Hikaye", 25, "Mustafa Kutlu", "Story", 34, 3, "Can");
+            Book book8 = new Book("Hikaye", 67, "Halit Ziya Uşaklıgil", "Story", 70, 3, "Can");
+            Book book9 = new Book("Hikayeden Hatıraya", 34, "hüseyin Hüsnü Yazıcı", "Story", 50, 3, "Can");
 
             Books.Add(book1);
             Books.Add(book2);
@@ -44,6 +45,7 @@ namespace BookStore
             Customers.Add(customer3);
             Customers.Add(customer4);
             Customers.Add(customer5);
+
         }
         public void DisplayMainMenu()
         {

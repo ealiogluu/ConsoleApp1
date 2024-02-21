@@ -1,7 +1,9 @@
-﻿using System;
+﻿using BookStore.BookFilters;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -204,6 +206,14 @@ namespace BookStore
         }
         public void FilterPrice()
         {
+            int choose = DisplayFilterPriceHeaders();
+
+            //BookFilterFactory.GetBookFilter(choose).Filter();
+
+            DoFilterByChoose(choose);
+        }
+        private static int DisplayFilterPriceHeaders()
+        {
             Console.WriteLine("Which interval of price are you looking at?");
             Console.WriteLine("1- 0-100");
             Console.WriteLine("2- 100-200");
@@ -216,59 +226,19 @@ namespace BookStore
             Console.WriteLine("------------------------------------------------");
             Console.WriteLine("Book Name   |   Category   |   Price");
             Console.WriteLine("------------------------------------------------\n");
+            return choose;
+        }
+        private void DoFilterByChoose(int x)
+        {
+            IBookFilter filter = null;
 
-            if (choose == 1)
-            {
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.Price > 0 && book.Price < 100)
-                    {
-                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
-                        Console.WriteLine("------------------------------------------------");
-                        Console.WriteLine();
-                    }
-                }
+            if (x == 1)      filter = new BookFilter0_100();
+            else if (x == 2) filter = new BookFilter100_200();
+            else if (x == 3) filter = new BookFilter200_500();
+            else if (x == 4) filter = new BookFilter500Plus();
+            else if (x == 5) filter = new BookFilter1000Plus();
 
-                Console.WriteLine("There is no book in this interval.");
-            }
-            else if (choose == 2)
-            {
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.Price >= 100 && book.Price < 200)
-                    {
-                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
-                        Console.WriteLine("------------------------------------------------");
-                        Console.WriteLine();
-                    }
-                }
-            }
-            else if (choose == 3)
-            {
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.Price >= 200 && book.Price < 500)
-                    {
-                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
-                        Console.WriteLine("------------------------------------------------");
-                        Console.WriteLine();
-                    }
-                }
-            }
-            else if (choose == 4)
-            {
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.Price >= 500)
-                    {
-                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
-                        Console.WriteLine("------------------------------------------------");
-                        Console.WriteLine();
-                    }
-                    return;
-                }
-                Console.WriteLine("There is no book in this interval.");
-            }
+            filter.Filter();
         }
         public void FilterPublisher()
         {
@@ -285,7 +255,7 @@ namespace BookStore
             {
                 if (choose == book.Publisher)
                 {
-                    Console.WriteLine(book.Publisher + " | " + book.Name + " | " + book.Writer);
+                    Console.WriteLine(book.Publisher + " | " + book.Name + " | " + book.Writer );
                 }
             }
             Console.WriteLine("------------------------------------------------\n");
@@ -305,3 +275,4 @@ namespace BookStore
         }
     }
 }
+

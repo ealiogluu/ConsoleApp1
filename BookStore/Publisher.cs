@@ -13,7 +13,6 @@ namespace BookStore
         public Publisher(string publishName)
         {
             PublishName = publishName;
-
         }
     }
 }

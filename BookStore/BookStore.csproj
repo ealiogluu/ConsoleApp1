@@ -45,6 +45,14 @@
   <ItemGroup>
     <Compile Include="Basket.cs" />
     <Compile Include="Book.cs" />
+    <Compile Include="BookFilters\BookFilter0_100.cs" />
+    <Compile Include="BookFilters\BookFilter1000Plus.cs" />
+    <Compile Include="BookFilters\BookFilter1000_2000.cs" />
+    <Compile Include="BookFilters\BookFilter100_200.cs" />
+    <Compile Include="BookFilters\BookFilter200_500.cs" />
+    <Compile Include="BookFilters\BookFilter500Plus.cs" />
+    <Compile Include="BookFilters\BookFilterFactory.cs" />
+    <Compile Include="BookFilters\IBookFilter.cs" />
     <Compile Include="BookStore.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Program.cs" />

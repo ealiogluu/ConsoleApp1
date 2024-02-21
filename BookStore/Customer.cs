@@ -10,6 +10,7 @@ namespace BookStore
 {
     internal class Customer
     {
+
         public Customer()
         {
             basket = new Basket();
@@ -32,14 +33,15 @@ namespace BookStore
         }
         public void DisplayMainMenu()
         {
-            Console.WriteLine("Select process that you want to do:");
+            Console.WriteLine("\nSelect process that you want to do:");
             Console.WriteLine("------------------------------------------------");
             Console.WriteLine("1- Display all books and their prices.");
             Console.WriteLine("2- Add to basket books.");
             Console.WriteLine("3- Remove from basket books.");
             Console.WriteLine("4- Display basket.");
             Console.WriteLine("5- Check Out the my order.");
-            Console.WriteLine("6- Display my own informations.\n");
+            Console.WriteLine("6- Display my own informations.");
+            Console.WriteLine("7- Filter books.\n ");
 
             string choose = Console.ReadLine();
             Console.WriteLine();
@@ -68,6 +70,11 @@ namespace BookStore
             {
                 DisplayOwnInfo();
             }
+            else if (choose=="7")
+            {
+                BookStore bookStore= new BookStore();
+                FilterBooks();
+            }
 
             DisplayMainMenu();
         }
@@ -84,6 +91,8 @@ namespace BookStore
             }
             Console.WriteLine("------------------------------------------------");
             Console.WriteLine( );
+
+            FilterBooks();
         }
         public void Remove()
         {
@@ -123,6 +132,64 @@ namespace BookStore
             else DisplayMainMenu();
 
         }
+        public void FilterBooks()
+        {
+            Console.WriteLine("Which types of books do you want?");
+            Console.WriteLine("1-Novels.");
+            Console.WriteLine("2-Poems.");
+            Console.WriteLine("3-Stories.");
+
+            int choose = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\t\tAll Books That You FiLtered");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Book Name   |   Category   |   Page Count");
+            Console.WriteLine("------------------------------------------------\n");
+
+            if (choose == 1)
+            {
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.CategoryId == choose)
+                    {
+                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
+                        Console.WriteLine("------------------------------------------------");
+                        Console.WriteLine();
+                    }
+                }
+                return;
+            }
+            else if (choose == 2)
+            {
+
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.CategoryId == choose)
+                    {
+                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
+                        Console.WriteLine("------------------------------------------------");
+                        Console.WriteLine();
+
+                    }
+                }
+                return;
+            }
+            else if (choose == 3)
+            {
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.CategoryId == choose)
+                    {
+                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
+                        Console.WriteLine("------------------------------------------------");
+                        Console.WriteLine();
+
+                    }
+                }
+                return;
+            }
+        }
+
 
     }
 }

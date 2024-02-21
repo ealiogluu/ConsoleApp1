@@ -99,9 +99,12 @@ namespace BookStore
         }
         public void LogInToSystem()
         {
+            Console.WriteLine("***Welcome to BookStore***\n");
+
             Console.WriteLine("User menu: 1");
             Console.WriteLine("Employee menu: 2");
             int secim = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
 
             if (secim == 1)
             {
@@ -111,33 +114,6 @@ namespace BookStore
             {
                 EmployeeLogIn();
             }
-        }
-        public void UserLogIn()
-        {
-            Console.Write("name and surname: ");
-            string chooseName = Console.ReadLine();
-            Console.WriteLine("Password: ");
-            int choosePassword = Convert.ToInt32(Console.ReadLine());
-
-            foreach (Customer customer in Customers)
-            {
-                if (customer.Name == chooseName && customer.Password == choosePassword)
-                {
-                    customer.DisplayMainMenu();
-                    return;
-                }
-            }
-            Console.WriteLine("Password is wrong!Please try again.\n");
-            UserLogIn();
-        }
-        public void EmployeeLogIn()
-        {
-            Console.Write("System Password: ");
-            double password = Convert.ToDouble(Console.ReadLine());
-
-            if (password == 1234567) DisplayMainMenu();
-            else Console.WriteLine("Password is wrong! Please try again.\n");
-            EmployeeLogIn();
         }
         public void UserProcess()
         {
@@ -154,189 +130,6 @@ namespace BookStore
                 UserLogIn();
             }
 
-        }
-        public void AddNewBook()
-        {
-            var book = new Book();
-
-            Console.WriteLine("Enter a new book.");
-
-            Console.Write("Book Name: ");
-            book.Name = Console.ReadLine();
-
-            Console.Write("Writer: ");
-            book.Writer = Console.ReadLine();
-
-            Console.Write("Price: ");
-            book.Price = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Page Count: ");
-            book.PageCount = Convert.ToInt32(Console.ReadLine());
-
-            Books.Add(book);
-            Console.WriteLine();
-        }
-        public void AddNewCustomer()
-        {
-            Customer customer = new Customer();
-
-            Console.WriteLine("Enter your informations.\n ");
-
-            Console.Write("Name and Surname:  ");
-            customer.Name = Console.ReadLine();
-
-            Console.Write("Adress: ");
-            customer.Adress = Console.ReadLine();
-
-            Console.Write("Phone Number: ");
-            customer.PhoneNumber = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Password: ");
-            customer.Password = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine();
-
-            Customers.Add(customer);
-        }
-        public void RemoveBook()
-        {
-            Console.WriteLine("Enter the book that you want to remove.");
-            string name = Console.ReadLine();
-            Console.WriteLine();
-
-            foreach (Book book in Books)
-            {
-                if (name == book.Name)
-                {
-                    Books.Remove(book);
-                    Console.WriteLine("Book is removed.\n");
-                    return;
-                }
-            }
-
-            Console.WriteLine("Unsuccessful," + name + " is not available.");
-        }
-        public void RemoveCustomer()
-        {
-            Console.WriteLine("enter the name and surname of customer.");
-            string choose = Console.ReadLine();
-
-            foreach (Customer customer in Customers)
-            {
-                if (customer.Name == choose)
-                {
-                    Customers.Remove(customer);
-                    return;
-                }
-            }
-            Console.WriteLine("Customer is removed.");
-        }
-        public void SearchBook()
-        {
-            Console.WriteLine("Search book that you want.\n");
-            string name = Console.ReadLine();
-            Console.WriteLine();
-
-            foreach (Book book in Books)
-            {
-                if (name == book.Name)
-                {
-                    Console.WriteLine(name + " is available.\n");
-                    return;
-                }
-            }
-            Console.WriteLine(name + " is not available.\n");
-        }
-        public void DisplayAllBooks()
-        {
-            Console.WriteLine("\t\tAll Books");
-            Console.WriteLine("------------------------------------------------");
-            Console.WriteLine("Book Name   |   Page Count   |   Book Price");
-            Console.WriteLine("------------------------------------------------");
-
-            foreach (Book book in Books)
-                Console.WriteLine(book.Name + "\t\t" + book.PageCount + "\t\t" + book.Price + "\n");
-        }
-        public void DisplayAllCustomers()
-        {
-            Console.WriteLine("***CUSTOMER INFORMATIONS***\n");
-            foreach (var customer in Customers)
-            {
-                Console.WriteLine("Customer Name and Surname: " + customer.Name);
-                Console.WriteLine("Customer Phone Number: " + customer.PhoneNumber);
-                Console.WriteLine("Customer Adress: " + customer.Adress);
-                Console.WriteLine();
-            }
-        }
-        public void FilterBooks()
-        {
-            Console.WriteLine("Which types of books do you want?");
-            Console.WriteLine("1-Novels.");
-            Console.WriteLine("2-Poems.");
-            Console.WriteLine("3-Stories.");
-
-            int choose = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("\t\tAll Books That You FiLtered");
-            Console.WriteLine("------------------------------------------------");
-            Console.WriteLine("Book Name   |   Category   |   Page Count");
-            Console.WriteLine("------------------------------------------------\n");
-
-            foreach(Book book in Books)
-            {
-                if (book.CategoryId == choose)
-                {
-                    Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
-                    Console.WriteLine("------------------------------------------------");
-                    Console.WriteLine();
-                    
-                }
-                else if (book.CategoryId== choose)
-                {
-                    Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
-                    Console.WriteLine("------------------------------------------------");
-                    Console.WriteLine();
-                    
-                }
-                else if (book.CategoryId==choose)
-                {
-                    Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
-                    Console.WriteLine("------------------------------------------------");
-                    Console.WriteLine();
-                    
-                }
-            }
-
-            if (choose == 1)
-            {
-
-
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.CategoryId == 1)
-                    {
-                        
-                    }
-                }
-            }
-            else if (choose == 2)
-            {
-                Console.WriteLine("\t\tAll Books That You FiLtered");
-                Console.WriteLine("------------------------------------------------");
-                Console.WriteLine("Book Name   |   Category   |   Page Count");
-                Console.WriteLine("------------------------------------------------\n");
-
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.CategoryId == 1)
-                    {
-                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
-                        Console.WriteLine("------------------------------------------------");
-                        Console.WriteLine();
-                        return;
-                    }
-                }
-
-            }
         }
         public void SignIn()
         {
@@ -360,7 +153,148 @@ namespace BookStore
             Customers.Add(customer);
 
             Console.WriteLine("Please log in.");
+            Console.WriteLine("-----------------");
             UserLogIn();
+        }
+        public void UserLogIn()
+        {
+            Console.Write("Name and Surname: ");
+            string chooseName = Console.ReadLine();
+            Console.Write("Password: ");
+            int choosePassword = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+
+            foreach (Customer customer in Customers)
+            {
+                if (customer.Name == chooseName && customer.Password == choosePassword)
+                {
+                    customer.DisplayMainMenu();
+                    return;
+                }
+            }
+            Console.WriteLine("Password is wrong!Please try again.\n");
+            UserLogIn();
+        }
+        public void EmployeeLogIn()
+        {
+            Console.Write("System Password: ");
+            double password = Convert.ToDouble(Console.ReadLine());
+
+            if (password == 1234567) DisplayMainMenu();
+            else Console.WriteLine("Password is wrong! Please try again.\n");
+            EmployeeLogIn();
+        }
+        public void AddNewBook()
+        {
+            var book = new Book();
+
+            Console.WriteLine("Enter a new book.");
+
+            Console.Write("Book Name: ");
+            book.Name = Console.ReadLine();
+
+            Console.Write("Writer: ");
+            book.Writer = Console.ReadLine();
+
+            Console.Write("Price: ");
+            book.Price = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Page Count: ");
+            book.PageCount = Convert.ToInt32(Console.ReadLine());
+
+            Books.Add(book);
+            Console.WriteLine();
+        }
+        public void DisplayAllBooks()
+        {
+            Console.WriteLine("\t\tAll Books");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Book Name   |   Page Count   |   Book Price");
+            Console.WriteLine("------------------------------------------------");
+
+            foreach (Book book in Books)
+                Console.WriteLine(book.Name + "\t\t" + book.PageCount + "\t\t" + book.Price + "\n");
+        }
+        public void SearchBook()
+        {
+            Console.WriteLine("Search book that you want.\n");
+            string name = Console.ReadLine();
+            Console.WriteLine();
+
+            foreach (Book book in Books)
+            {
+                if (name == book.Name)
+                {
+                    Console.WriteLine(name + " is available.\n");
+                    return;
+                }
+            }
+            Console.WriteLine(name + " is not available.\n");
+        }
+        public void RemoveBook()
+        {
+            Console.WriteLine("Enter the book that you want to remove.");
+            string name = Console.ReadLine();
+            Console.WriteLine();
+
+            foreach (Book book in Books)
+            {
+                if (name == book.Name)
+                {
+                    Books.Remove(book);
+                    Console.WriteLine("Book is removed.\n");
+                    return;
+                }
+            }
+
+            Console.WriteLine("Unsuccessful," + name + " is not available.");
+        }
+        public void AddNewCustomer()
+        {
+            Customer customer = new Customer();
+
+            Console.WriteLine("Enter your informations.\n ");
+
+            Console.Write("Name and Surname:  ");
+            customer.Name = Console.ReadLine();
+
+            Console.Write("Adress: ");
+            customer.Adress = Console.ReadLine();
+
+            Console.Write("Phone Number: ");
+            customer.PhoneNumber = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Password: ");
+            customer.Password = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();
+
+            Customers.Add(customer);
+        }
+        public void DisplayAllCustomers()
+        {
+            Console.WriteLine("***CUSTOMER INFORMATIONS***\n");
+            foreach (var customer in Customers)
+            {
+                Console.WriteLine("Customer Name and Surname: " + customer.Name);
+                Console.WriteLine("Customer Phone Number: " + customer.PhoneNumber);
+                Console.WriteLine("Customer Adress: " + customer.Adress);
+                Console.WriteLine();
+            }
+        }
+        public void RemoveCustomer()
+        {
+            Console.WriteLine("enter the name and surname of customer.");
+            string choose = Console.ReadLine();
+
+            foreach (Customer customer in Customers)
+            {
+                if (customer.Name == choose)
+                {
+                    Customers.Remove(customer);
+                    return;
+                }
+            }
+            Console.WriteLine("Customer is removed.");
         }
     }
 }

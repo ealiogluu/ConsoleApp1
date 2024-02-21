@@ -13,7 +13,7 @@ namespace BookStore
         public static List<Book> Books = new List<Book>();
         public BookStore()
         {
-            Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1);
+            Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,);
             Book book2 = new Book("Suç ve Ceza", 650, "Dostoyevski", "Novel", 250, 1);
             Book book3 = new Book("İçimizdeki Şeytan", 67, "Sabahattin Ali", "Novel", 45, 1);
             Book book4 = new Book("Şiir'k", 23, "Furkan Dowan", "Poem", 77, 2);
@@ -295,6 +295,10 @@ namespace BookStore
                 }
             }
             Console.WriteLine("Customer is removed.");
+        }
+        public void DisplayPublisher()
+        {
+
         }
     }
 }

@@ -41,7 +41,8 @@ namespace BookStore
             Console.WriteLine("4- Display basket.");
             Console.WriteLine("5- Check Out the my order.");
             Console.WriteLine("6- Display my own informations.");
-            Console.WriteLine("7- Filter books.\n ");
+            Console.WriteLine("7- Filter books.");
+            Console.WriteLine("8- Filter price.\n");
 
             string choose = Console.ReadLine();
             Console.WriteLine();
@@ -60,20 +61,24 @@ namespace BookStore
             }
             else if (choose == "4")
             {
-               basket.DisplayBasketInfo();
+                basket.DisplayBasketInfo();
             }
             else if (choose == "5")
             {
                 CheckOut();
             }
-            else if (choose == "6") 
+            else if (choose == "6")
             {
                 DisplayOwnInfo();
             }
-            else if (choose=="7")
+            else if (choose == "7")
             {
-                BookStore bookStore= new BookStore();
-                FilterBooks();
+                BookStore bookStore = new BookStore();
+                FilterCategories();
+            }
+            else if (choose == "8")
+            {
+                FilterPrice();
             }
 
             DisplayMainMenu();
@@ -90,9 +95,9 @@ namespace BookStore
                 Console.WriteLine(book.Name + "\t\t" + book.PageCount + "\t\t" + book.Price);
             }
             Console.WriteLine("------------------------------------------------");
-            Console.WriteLine( );
+            Console.WriteLine();
 
-            FilterBooks();
+            FilterCategories();
         }
         public void Remove()
         {
@@ -132,7 +137,7 @@ namespace BookStore
             else DisplayMainMenu();
 
         }
-        public void FilterBooks()
+        public void FilterCategories()
         {
             Console.WriteLine("Which types of books do you want?");
             Console.WriteLine("1-Novels.");
@@ -189,8 +194,69 @@ namespace BookStore
                 return;
             }
         }
+        public void FilterPrice()
+        {
+            Console.WriteLine("Which interval of price are you looking at?");
+            Console.WriteLine("1- 0-100");
+            Console.WriteLine("2- 100-200");
+            Console.WriteLine("3- 200-500");
+            Console.WriteLine("4- 500++");
 
+            int choose = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("\t\tAll Books That You FiLtered");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Book Name   |   Category   |   Price");
+            Console.WriteLine("------------------------------------------------\n");
+
+            if (choose == 1)
+            {
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.Price > 0 && book.Price < 100)
+                    {
+                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
+                        Console.WriteLine("------------------------------------------------");
+                        Console.WriteLine();
+                    }
+                }
+            }
+            else if (choose == 2)
+            {
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.Price >= 100 && book.Price < 200)
+                    {
+                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
+                        Console.WriteLine("------------------------------------------------");
+                        Console.WriteLine();
+                    }
+                }
+            }
+            else if (choose == 3)
+            {
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.Price >= 200 && book.Price < 500)
+                    {
+                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
+                        Console.WriteLine("------------------------------------------------");
+                        Console.WriteLine();
+                    }
+                }
+            }
+            else if (choose == 4)
+            {
+                foreach (Book book in BookStore.Books)
+                {
+                    if (book.Price >= 500)
+                    {
+                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
+                        Console.WriteLine("------------------------------------------------");
+                        Console.WriteLine();
+                    }
+                }
+            }
+        }
     }
 }
-                                                                           

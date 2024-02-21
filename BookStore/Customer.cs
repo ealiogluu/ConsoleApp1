@@ -54,7 +54,7 @@ namespace BookStore
             }
             else if (choose == "2")
             {
-                DisplayAllPublishers();   
+                DisplayAllPublishers();
             }
             else if (choose == "3")
             {
@@ -80,11 +80,11 @@ namespace BookStore
             {
                 FilterGenres();
             }
-            else if (choose== "9")
+            else if (choose == "9")
             {
                 FilterPublisher();
             }
-            else if (choose== "10")
+            else if (choose == "10")
             {
                 FilterPrice();
             }
@@ -228,7 +228,7 @@ namespace BookStore
                         Console.WriteLine();
                     }
                 }
-                
+
                 Console.WriteLine("There is no book in this interval.");
             }
             else if (choose == 2)
@@ -274,17 +274,18 @@ namespace BookStore
         {
             Console.WriteLine("Which publisher of books do you search?");
             string choose = Console.ReadLine();
+            Console.WriteLine();
 
-            Console.WriteLine("\tAll Books That You FiLtered to Publisher");
+            Console.WriteLine("   All Books That You FiLtered to Publisher");
             Console.WriteLine("------------------------------------------------");
             Console.WriteLine("Publisher  |   Book Name   |   Writer");
-            Console.WriteLine("------------------------------------------------\n");
+            Console.WriteLine("------------------------------------------------");
 
             foreach (Book book in BookStore.Books)
             {
-                if (choose== book.Publisher)
+                if (choose == book.Publisher)
                 {
-                    Console.WriteLine(book.Publisher + book.Name + book.Writer);
+                    Console.WriteLine(book.Publisher + " | " + book.Name + " | " + book.Writer);
                 }
             }
             Console.WriteLine("------------------------------------------------\n");
@@ -296,7 +297,7 @@ namespace BookStore
             Console.WriteLine("Publisher Name");
             Console.WriteLine("-------------------------------");
 
-            foreach (Publisher publisher in Publisher.Publishers)
+            foreach (Publisher publisher in BookStore.Publishers)
             {
                 Console.WriteLine(publisher.PublishName);
             }

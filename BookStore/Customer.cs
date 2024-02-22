@@ -46,7 +46,8 @@ namespace BookStore
             Console.WriteLine("7- Display my own informations.");
             Console.WriteLine("8- Filter genre of books.");
             Console.WriteLine("9- Filter publishers.");
-            Console.WriteLine("10- Filter price.\n");
+            Console.WriteLine("10- Filter price.");
+            Console.WriteLine("11- Filter writer.\n");
 
             string choose = Console.ReadLine();
             Console.WriteLine();
@@ -54,16 +55,17 @@ namespace BookStore
         }
         private void GetChooseMainMenu(string choose)
         {
-            if (choose == "1") DisplayAllBooks();
-            else if (choose == "2") DisplayAllPublishers();
-            else if (choose == "3") basket.AddNewBook();
-            else if (choose == "4") Remove();
-            else if (choose == "5") basket.DisplayBasketInfo();
-            else if (choose == "6") CheckOut();
-            else if (choose == "7") DisplayOwnInfo();
-            else if (choose == "8") FilterGenres();
-            else if (choose == "9") FilterPublisher();
+            if (choose == "1")       DisplayAllBooks();
+            else if (choose == "2")  DisplayAllPublishers();
+            else if (choose == "3")  basket.AddNewBook();
+            else if (choose == "4")  Remove();
+            else if (choose == "5")  basket.DisplayBasketInfo();
+            else if (choose == "6")  CheckOut();
+            else if (choose == "7")  DisplayOwnInfo();
+            else if (choose == "8")  FilterGenres();
+            else if (choose == "9")  FilterPublisher();
             else if (choose == "10") FilterPrice();
+            else if (choose == "11") FilterWriter();
         }
         public void MainMenuProcess()
         {
@@ -138,7 +140,7 @@ namespace BookStore
         {
             IGenresFilter filter = null;
 
-            if (choose == 1)      filter = new GenresFilterNovels();
+            if (choose == 1) filter = new GenresFilterNovels();
             else if (choose == 2) filter = new GenresFilterPoem();
             else if (choose == 3) filter = new GenresFilterStories();
 
@@ -172,7 +174,7 @@ namespace BookStore
         {
             IBookPriceFilter filter = null;
 
-            if (choose == 1)      filter = new BookPriceFilter0_100();
+            if (choose == 1) filter = new BookPriceFilter0_100();
             else if (choose == 2) filter = new BookPriceFilter100_200();
             else if (choose == 3) filter = new BookPriceFilter200_500();
             else if (choose == 4) filter = new BookPriceFilter500Plus();
@@ -185,6 +187,43 @@ namespace BookStore
             int choose = DisplayFilterPriceHeaders();
 
             DoPriceFilterByChoose(choose);
+        }
+
+        private static string DisplayFilterWriterHeaders()
+        {
+            Console.WriteLine("Which writer of books do you search?");
+            Console.WriteLine("* Yakup Kadri Karaosmanoğlu");
+            Console.WriteLine("* Dostoyevski");
+            Console.WriteLine("* Sabahattin Ali");
+            Console.WriteLine("* Furkan Dowan");
+            Console.WriteLine("* Halil Şahan");
+            Console.WriteLine("* Veysel çolak");
+            Console.WriteLine("* Mustafa Kutlu");
+            Console.WriteLine("* Halit Ziya Uşaklıgil");
+            Console.WriteLine("* Hüseyin Hüsnü Yazıcı");
+            string choose = Console.ReadLine();
+            Console.WriteLine();
+
+            Console.WriteLine("\t" + choose + "'s Books");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Book Name  |   Writer   |   Publisher");
+            Console.WriteLine("------------------------------------------------");
+            return choose;
+        }
+        private static void DoFilterWriterByChoose(string choose)
+        {
+            foreach (Book book in BookStore.Books)
+            {
+                if (choose == book.Writer)
+                    Console.WriteLine(book.Name + " | " + book.Writer + " | " + book.Publisher);
+            }
+            Console.WriteLine("------------------------------------------------\n");
+        }
+        public void FilterWriter()
+        {
+            string choose = DisplayFilterWriterHeaders();
+
+            DoFilterWriterByChoose(choose);
         }
 
         public void DisplayOwnInfo()
@@ -209,8 +248,8 @@ namespace BookStore
 
             foreach (Book book in BookStore.Books)
             {
-                if (choose == book.Publisher) 
-                    Console.WriteLine(book.Publisher + " | " + book.Name + " | " + book.Writer );
+                if (choose == book.Publisher)
+                    Console.WriteLine(book.Publisher + " | " + book.Name + " | " + book.Writer);
             }
             Console.WriteLine("------------------------------------------------\n");
         }

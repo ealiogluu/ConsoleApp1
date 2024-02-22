@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookStore.BookFilters;
+using BookStore.PriceFilter;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 
@@ -72,6 +74,7 @@ namespace BookStore
             Publishers.Add(publish11);
         }
 
+
         private static string DisplayMainMenuHeaders()
         {
             Console.WriteLine("***Welcome to BookStore***\n");
@@ -92,7 +95,7 @@ namespace BookStore
         }
         private void GetChooseMainMenu(string choose)
         {
-            if (choose == "1")      AddNewBook();
+            if (choose == "1") AddNewBook();
             else if (choose == "2") RemoveBook();
             else if (choose == "3") SearchBook();
             else if (choose == "4") DisplayAllBooks();
@@ -107,82 +110,6 @@ namespace BookStore
 
             GetChooseMainMenu(choose);
             MainMenuProcess();
-        }               
-
-        public void LogInToSystem()
-        {
-            Console.WriteLine("***Welcome to BookStore***\n");
-
-            Console.WriteLine("User menu: 1");
-            Console.WriteLine("Employee menu: 2");
-            int secim = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-
-            if (secim == 1)      UserProcess();
-            else if (secim == 2) EmployeeLogIn();
-        }
-        public void UserProcess()
-        {
-            Console.WriteLine("1- Sign in.");
-            Console.WriteLine("2- Log in.");
-            int choose = Convert.ToInt32(Console.ReadLine());
-
-            if (choose == 1)      SignIn();
-            else if (choose == 2) UserLogIn();
-        }
-        public void SignIn()
-        {
-            Customer customer = new Customer();
-
-            Console.WriteLine("Enter your informations.\n ");
-
-            Console.Write("Name and Surname:  ");
-            customer.Name = Console.ReadLine();
-
-            Console.Write("Adress: ");
-            customer.Adress = Console.ReadLine();
-
-            Console.Write("Phone Number: ");
-            customer.PhoneNumber = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Password: ");
-            customer.Password = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine();
-
-            Customers.Add(customer);
-
-            Console.WriteLine("Please log in.");
-            Console.WriteLine("-----------------");
-            UserLogIn();
-        }
-        public void UserLogIn()
-        {
-            Console.Write("Name and Surname: ");
-            string chooseName = Console.ReadLine();
-            Console.Write("Password: ");
-            int choosePassword = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-
-            foreach (Customer customer in Customers)
-            {
-                if (customer.Name == chooseName && customer.Password == choosePassword)
-                {
-                    customer.MainMenuProcess();
-                    return;
-                }
-            }
-            Console.WriteLine("Password is wrong!Please try again.\n");
-            UserLogIn();
-        }
-        public void EmployeeLogIn()
-        {
-            Console.Write("System Password: ");
-            double password = Convert.ToDouble(Console.ReadLine());
-
-            if (password == 1234567) MainMenuProcess();
-            else Console.WriteLine("Password is wrong! Please try again.\n");
-
-            EmployeeLogIn();
         }
 
         public void AddNewBook()
@@ -222,7 +149,7 @@ namespace BookStore
             string name = Console.ReadLine();
             Console.WriteLine();
 
-            foreach (Book book in Books)
+            foreach (Book book in .Books)
             {
                 if (name == book.Name)
                 {
@@ -300,14 +227,95 @@ namespace BookStore
             Console.WriteLine("Customer is removed.");
         }
 
-        public void FilterAllPropertiesOfBooks()
+
+        public void LogInToSystem()
         {
-            Console.WriteLine("Do filters that you want to make.\n");
+            Console.WriteLine("***Welcome to BookStore***\n");
 
+            Console.WriteLine("User menu: 1");
+            Console.WriteLine("Employee menu: 2");
+            int secim = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
 
-            string chooseWriter = Console.ReadLine();
-            string chooseGenre = Console.ReadLine();
-            int choosePrice = Convert.ToInt32(Console.ReadLine());
+            if (secim == 1)      UserProcess();
+            else if (secim == 2) EmployeeLogIn();
         }
+        public void UserProcess()
+        {
+            Console.WriteLine("1- Sign in.");
+            Console.WriteLine("2- Log in.");
+            int choose = Convert.ToInt32(Console.ReadLine());
+
+            if (choose == 1)      SignIn();
+            else if (choose == 2) UserLogIn();
+        }
+        public void SignIn()
+        {
+            Customer customer = new Customer();
+
+            Console.WriteLine("Enter your informations.\n ");
+
+            Console.Write("Name and Surname:  ");
+            customer.Name = Console.ReadLine();
+
+            Console.Write("Adress: ");
+            customer.Adress = Console.ReadLine();
+
+            Console.Write("Phone Number: ");
+            customer.PhoneNumber = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Password: ");
+            customer.Password = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();
+
+            Customers.Add(customer);
+
+            Console.WriteLine("Please log in.");
+            Console.WriteLine("-----------------");
+            UserLogIn();
+        }
+        public void UserLogIn()
+        {
+            Console.Write("Name and Surname: ");
+            string chooseName = Console.ReadLine();
+            Console.Write("Password: ");
+            int choosePassword = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+
+            foreach (Customer customer in Customers)
+            {
+                if (customer.Name == chooseName && customer.Password == choosePassword)
+                {
+                    customer.MainMenuProcess();
+                    return;
+                }
+            }
+            Console.WriteLine("Password is wrong!Please try again.\n");
+            UserLogIn();
+        }
+        public void EmployeeLogIn()
+        {
+            Console.Write("System Password: ");
+            double password = Convert.ToDouble(Console.ReadLine());
+
+            if (password == 1234567) MainMenuProcess();
+            else Console.WriteLine("Password is wrong! Please try again.\n");
+
+            EmployeeLogIn();
+        }
+
+
+
+        //public void FilterAllPropertiesOfBooks()
+        //{
+        //    Console.WriteLine("Do filters that you want to make.\n");
+
+
+        //    string chooseWriter = Console.ReadLine();
+        //    string chooseGenre = Console.ReadLine();
+        //    int choosePrice = Convert.ToInt32(Console.ReadLine());
+        //}
+
+
     }
 }

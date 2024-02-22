@@ -120,40 +120,6 @@ namespace BookStore
             else MainMenuProcess();
 
         }
-
-        private static int DisplayFilterGenresHeaders()
-        {
-            Console.WriteLine("Which types of books do you want?");
-            Console.WriteLine("1-Novels.");
-            Console.WriteLine("2-Poems.");
-            Console.WriteLine("3-Stories.");
-
-            int choose = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("\t\tAll Books That You FiLtered");
-            Console.WriteLine("------------------------------------------------");
-            Console.WriteLine("Book Name   |   Category   |   Page Count");
-            Console.WriteLine("------------------------------------------------\n");
-            return choose;
-        }
-        private static void DoGenresFilterByChoose(int choose)
-        {
-            IGenresFilter filter = null;
-
-            if (choose == 1) filter = new GenresFilterNovels();
-            else if (choose == 2) filter = new GenresFilterPoem();
-            else if (choose == 3) filter = new GenresFilterStories();
-
-            filter.FilterPrice(choose);
-        }
-        public void FilterGenres()
-        {
-            int choose = DisplayFilterGenresHeaders();
-
-            DoGenresFilterByChoose(choose);
-        }
-
-
         private static int DisplayFilterPriceHeaders()
         {
             Console.WriteLine("Which interval of price are you looking at?");
@@ -224,6 +190,38 @@ namespace BookStore
             string choose = DisplayFilterWriterHeaders();
 
             DoFilterWriterByChoose(choose);
+        }
+
+        private static int DisplayFilterGenresHeaders()
+        {
+            Console.WriteLine("Which types of books do you want?");
+            Console.WriteLine("1-Novels.");
+            Console.WriteLine("2-Poems.");
+            Console.WriteLine("3-Stories.");
+
+            int choose = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\t\tAll Books That You FiLtered");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("Book Name   |   Category   |   Page Count");
+            Console.WriteLine("------------------------------------------------\n");
+            return choose;
+        }
+        private static void DoGenresFilterByChoose(int choose)
+        {
+            IGenresFilter filter = null;
+
+            if (choose == 1) filter = new GenresFilterNovels();
+            else if (choose == 2) filter = new GenresFilterPoem();
+            else if (choose == 3) filter = new GenresFilterStories();
+
+            filter.FilterPrice(choose);
+        }
+        public void FilterGenres()
+        {
+            int choose = DisplayFilterGenresHeaders();
+
+            DoGenresFilterByChoose(choose);
         }
 
         public void DisplayOwnInfo()

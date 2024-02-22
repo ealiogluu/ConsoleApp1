@@ -31,8 +31,6 @@ namespace BookStore
 
         private static string DisplayMainMenuHeaders()
         {
-            try
-            {
                 Console.WriteLine("\nSelect process that you want to do:");
                 Console.WriteLine("------------------------------------------------");
                 Console.WriteLine("1- Display all books and their prices.");
@@ -51,13 +49,6 @@ namespace BookStore
                 string choose = Console.ReadLine();
                 Console.WriteLine();
                 return choose;
-            }
-            catch (Exception a)
-            {
-                Console.WriteLine(a.Message);
-                return null;
-            }
-
         }
         private void GetChooseMainMenu(string choose)
         {
@@ -116,6 +107,7 @@ namespace BookStore
             }
 
         }
+
         private static int DisplayFilterPriceHeaders()
         {
             Console.WriteLine("Which interval of price are you looking at?");

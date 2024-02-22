@@ -1,4 +1,5 @@
 ﻿using BookStore.BookFilters;
+using BookStore.PriceFilter;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -149,6 +150,22 @@ namespace BookStore
         }
         public void FilterGenres()
         {
+            int choose = DisplayFilterGenresHeaders();
+
+            DoGenresFilterByChoose(choose);
+        }
+        private static void DoGenresFilterByChoose(int choose)
+        {
+            IGenresFilter filter = null;
+
+            if (choose == 1) filter = new GenresFilterNovels();
+            else if (choose == 2) filter = new GenresFilterPoem();
+            else if (choose == 3) filter = new GenresFilterStories();
+
+            filter.FilterPrice(choose);
+        }
+        private static int DisplayFilterGenresHeaders()
+        {
             Console.WriteLine("Which types of books do you want?");
             Console.WriteLine("1-Novels.");
             Console.WriteLine("2-Poems.");
@@ -160,49 +177,7 @@ namespace BookStore
             Console.WriteLine("------------------------------------------------");
             Console.WriteLine("Book Name   |   Category   |   Page Count");
             Console.WriteLine("------------------------------------------------\n");
-
-            if (choose == 1)
-            {
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.CategoryId == choose)
-                    {
-                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
-                        Console.WriteLine("------------------------------------------------");
-                        Console.WriteLine();
-                    }
-                }
-                return;
-            }
-            else if (choose == 2)
-            {
-
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.CategoryId == choose)
-                    {
-                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
-                        Console.WriteLine("------------------------------------------------");
-                        Console.WriteLine();
-
-                    }
-                }
-                return;
-            }
-            else if (choose == 3)
-            {
-                foreach (Book book in BookStore.Books)
-                {
-                    if (book.CategoryId == choose)
-                    {
-                        Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.PageCount);
-                        Console.WriteLine("------------------------------------------------");
-                        Console.WriteLine();
-
-                    }
-                }
-                return;
-            }
+            return choose;
         }
         public void FilterPrice()
         {

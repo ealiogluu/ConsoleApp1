@@ -13,13 +13,13 @@ namespace BookStore
 {
     internal class Customer
     {
-
         public Customer()
         {
-            basket = new Basket();
+            Basket = new Basket();
         }
 
-        public Basket basket;
+
+        public Basket Basket;
         public string Name { get; set; }
         public string Adress { get; set; }
         public double PhoneNumber { get; set; }
@@ -34,7 +34,7 @@ namespace BookStore
             PhoneNumber = phoneNumber;
             Password = password;
             Mail = mail;
-            basket = new Basket();
+            Basket = new Basket();
         }
 
         private static string DisplayMainMenuHeaders()
@@ -60,18 +60,18 @@ namespace BookStore
         }
         private void GetChooseMainMenu(string choose)
         {
-            if (choose == "1")       DisplayAllBooks();
-            else if (choose == "2")  DisplayAllPublishers();
-            else if (choose == "3")  basket.AddNewBook();
-            else if (choose == "4")  Remove();
-            else if (choose == "5")  basket.DisplayBasketInfo();
-            else if (choose == "6")  CheckOut();
-            else if (choose == "7")  DisplayOwnInfo();
-            else if (choose == "8")  FilterGenres();
-            else if (choose == "9")  FilterPublisher();
+            if (choose == "1") DisplayAllBooks();
+            else if (choose == "2") DisplayAllPublishers();
+            else if (choose == "3") Basket.AddNewBook();
+            else if (choose == "4") Remove();
+            else if (choose == "5") Basket.DisplayBasketInfo();
+            else if (choose == "6") CheckOut();
+            else if (choose == "7") DisplayOwnInfo();
+            else if (choose == "8") FilterGenres();
+            else if (choose == "9") FilterPublisher();
             else if (choose == "10") FilterPrice();
             else if (choose == "11") FilterWriter();
-            else if (choose =="12") { }
+            else if (choose == "12") { }
         }
         public void MainMenuProcess()
         {
@@ -112,20 +112,6 @@ namespace BookStore
                     return;
                 }
             }
-
-        }
-        public void CheckOut()
-        {
-            basket.DisplayBasketInfo();
-
-            Console.WriteLine("Enter the 1 for check out or 2 for return.");
-            int choose = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-
-            if (choose == 1) Console.WriteLine("Your order is checked out.\n");
-            else MainMenuProcess();
-
-
 
         }
         private static int DisplayFilterPriceHeaders()
@@ -239,6 +225,24 @@ namespace BookStore
             Console.WriteLine("Phone Number: " + PhoneNumber);
             Console.WriteLine("Adress: " + Adress);
             Console.WriteLine();
+        }
+        public void CheckOut()
+        {
+            Basket.DisplayBasketInfo();
+
+            Console.WriteLine("Enter the 1 for check out or 2 for return.");
+            int choose = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+
+            if (choose == 1)
+            {
+                Random random = new Random();
+                int orderNumber = random.Next();
+
+                Console.WriteLine("Your order is checked out.\n");
+                Console.Write("Your order number: " + orderNumber);
+            }
+            else MainMenuProcess();
         }
 
         public void FilterPublisher()

@@ -14,9 +14,7 @@ namespace BookStore
         public List<Customer> Customers = new List<Customer>();
         public static List<Book> Books = new List<Book>();
         public static List<Publisher> Publishers = new List<Publisher>();
-        public static List<Order> orders = new List<Order>();
-
-        Customer customer = new Customer();
+        public static List<Order> Orders = new List<Order>();
         public BookStore()
         {
             Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,"Can Yayınları");
@@ -39,17 +37,17 @@ namespace BookStore
             Books.Add(book8);
             Books.Add(book9);
 
-            Customer customer1 = new Customer("Emine Nur Alioğlu", "Barıs mah.", 5337161659, 1234,);
-            Customer customer2 = new Customer("Ayse Kaya", "baris", 5306639944, 567);
-            Customer customer3 = new Customer("emine kaya", "guzelyali", 5306630375, 3456);
-            Customer customer4 = new Customer("esma alioğlu", "baris", 5339630561, 897);
-            Customer customer5 = new Customer("sude akar", "gunesli", 6305785632, 4567);
+            //Customer customer1 = new Customer("Emine Nur Alioğlu", "Barıs mah.", 5337161659, 1234,);
+            //Customer customer2 = new Customer("Ayse Kaya", "baris", 5306639944, 567);
+            //Customer customer3 = new Customer("emine kaya", "guzelyali", 5306630375, 3456);
+            //Customer customer4 = new Customer("esma alioğlu", "baris", 5339630561, 897);
+            //Customer customer5 = new Customer("sude akar", "gunesli", 6305785632, 4567);
 
-            Customers.Add(customer1);
-            Customers.Add(customer2);
-            Customers.Add(customer3);
-            Customers.Add(customer4);
-            Customers.Add(customer5);
+            //Customers.Add(customer1);
+            //Customers.Add(customer2);
+            //Customers.Add(customer3);
+            //Customers.Add(customer4);
+            //Customers.Add(customer5);
 
             Publisher publish1 = new Publisher("Can Yayınları");
             Publisher publish2 = new Publisher("İş Bankası Yayınları");
@@ -74,6 +72,14 @@ namespace BookStore
             Publishers.Add(publish9);
             Publishers.Add(publish10);
             Publishers.Add(publish11);
+
+            Order order1 = new Order(12435677);
+            Order order2 = new Order(84670477);
+            Order order3 = new Order(08327507);
+
+            Orders.Add(order1);
+            Orders.Add(order2);
+            Orders.Add(order3);
         }
 
 

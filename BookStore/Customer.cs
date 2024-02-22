@@ -95,8 +95,6 @@ namespace BookStore
             Console.WriteLine("Enter book name that you want to remove from your basket.");
             string secim = Console.ReadLine();
 
-            //Basket.books.FirstOrDefault(book => book.Name == secim);
-
             foreach (Book book in Basket.books)
             {
                 if (book.Name == secim)
@@ -120,7 +118,6 @@ namespace BookStore
             else MainMenuProcess();
 
         }
-
 
         private static int DisplayFilterGenresHeaders()
         {
@@ -212,10 +209,8 @@ namespace BookStore
 
             foreach (Book book in BookStore.Books)
             {
-                if (choose == book.Publisher)
-                {
+                if (choose == book.Publisher) 
                     Console.WriteLine(book.Publisher + " | " + book.Name + " | " + book.Writer );
-                }
             }
             Console.WriteLine("------------------------------------------------\n");
         }
@@ -227,9 +222,8 @@ namespace BookStore
             Console.WriteLine("-------------------------------");
 
             foreach (Publisher publisher in BookStore.Publishers)
-            {
                 Console.WriteLine(publisher.PublishName);
-            }
+
             Console.WriteLine("-------------------------------\n");
         }
     }

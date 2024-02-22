@@ -90,14 +90,6 @@ namespace BookStore
 
             FilterGenres();
         }
-        public void DisplayOwnInfo()
-        {
-            Console.WriteLine("***MY INFORMATIONS***\n");
-            Console.WriteLine("Name and Surname: " + Name);
-            Console.WriteLine("Phone Number: " + PhoneNumber);
-            Console.WriteLine("Adress: " + Adress);
-            Console.WriteLine();
-        }
         public void Remove()
         {
             Console.WriteLine("Enter book name that you want to remove from your basket.");
@@ -198,6 +190,14 @@ namespace BookStore
             DoPriceFilterByChoose(choose);
         }
 
+        public void DisplayOwnInfo()
+        {
+            Console.WriteLine("***MY INFORMATIONS***\n");
+            Console.WriteLine("Name and Surname: " + Name);
+            Console.WriteLine("Phone Number: " + PhoneNumber);
+            Console.WriteLine("Adress: " + Adress);
+            Console.WriteLine();
+        }
 
         public void FilterPublisher()
         {

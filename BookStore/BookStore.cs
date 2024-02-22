@@ -184,6 +184,7 @@ namespace BookStore
             else Console.WriteLine("Password is wrong! Please try again.\n");
             EmployeeLogIn();
         }
+
         public void AddNewBook()
         {
             var book = new Book();
@@ -249,6 +250,7 @@ namespace BookStore
 
             Console.WriteLine("Unsuccessful," + name + " is not available.");
         }
+
         public void AddNewCustomer()
         {
             Customer customer = new Customer();

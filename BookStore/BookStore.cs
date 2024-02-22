@@ -37,17 +37,17 @@ namespace BookStore
             Books.Add(book8);
             Books.Add(book9);
 
-            //Customer customer1 = new Customer("Emine Nur Alioğlu", "Barıs mah.", 5337161659, 1234,);
-            //Customer customer2 = new Customer("Ayse Kaya", "baris", 5306639944, 567);
-            //Customer customer3 = new Customer("emine kaya", "guzelyali", 5306630375, 3456);
-            //Customer customer4 = new Customer("esma alioğlu", "baris", 5339630561, 897);
-            //Customer customer5 = new Customer("sude akar", "gunesli", 6305785632, 4567);
+            Customer customer1 = new Customer("Emine Nur Alioğlu", "Barıs mah.", 5337161659, 1234);
+            Customer customer2 = new Customer("Ayse Kaya", "baris", 5306639944, 567);
+            Customer customer3 = new Customer("emine kaya", "guzelyali", 5306630375, 3456);
+            Customer customer4 = new Customer("esma alioğlu", "baris", 5339630561, 897);
+            Customer customer5 = new Customer("sude akar", "gunesli", 6305785632, 4567);
 
-            //Customers.Add(customer1);
-            //Customers.Add(customer2);
-            //Customers.Add(customer3);
-            //Customers.Add(customer4);
-            //Customers.Add(customer5);
+            Customers.Add(customer1);
+            Customers.Add(customer2);
+            Customers.Add(customer3);
+            Customers.Add(customer4);
+            Customers.Add(customer5);
 
             Publisher publish1 = new Publisher("Can Yayınları");
             Publisher publish2 = new Publisher("İş Bankası Yayınları");
@@ -94,8 +94,9 @@ namespace BookStore
             Console.WriteLine("5- Display all customers.");
             Console.WriteLine("6- Add new customer.");
             Console.WriteLine("7- Remove customer.");
-            Console.WriteLine("8- Search book.\n");
-
+            Console.WriteLine("8- Search book.");
+            Console.WriteLine("9- Display orders.");
+            Console.WriteLine("10- Exit.");
 
             string choose = Console.ReadLine();
             Console.WriteLine();
@@ -103,6 +104,7 @@ namespace BookStore
         }
         private void GetChooseMainMenu(string choose)
         {
+            bool kontrol = false;
             if (choose == "1") AddNewBook();
             else if (choose == "2") RemoveBook();
             else if (choose == "3") SearchBook();
@@ -111,6 +113,8 @@ namespace BookStore
             else if (choose == "6") AddNewCustomer();
             else if (choose == "7") RemoveCustomer();
             else if (choose == "8") SearchBook();
+            else if (choose == "9") DisplayOrders();
+            else if (choose == "10") kontrol = true;
         }
         public void MainMenuProcess()
         {
@@ -185,7 +189,6 @@ namespace BookStore
 
             Console.WriteLine("Unsuccessful," + name + " is not available.");
         }
-
         public void AddNewCustomer()
         {
             Customer customer = new Customer();
@@ -234,8 +237,6 @@ namespace BookStore
             }
             Console.WriteLine("Customer is removed.");
         }
-
-
         public void LogInToSystem()
         {
             Console.WriteLine("***Welcome to BookStore***\n");
@@ -310,6 +311,19 @@ namespace BookStore
             else Console.WriteLine("Password is wrong! Please try again.\n");
 
             EmployeeLogIn();
+        }
+
+        public void DisplayOrders()
+        {
+            Console.WriteLine("\tAll Orders");
+            Console.WriteLine("---------------------------------");
+            foreach (Order order in Orders)
+            {
+                Console.Write("Order Number :"+ order.OrderNumber);
+                Console.WriteLine();
+            }
+            Console.WriteLine("---------------------------------");
+
         }
 
         //public void FilterAllPropertiesOfBooks()

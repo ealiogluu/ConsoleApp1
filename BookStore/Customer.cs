@@ -13,65 +13,67 @@ namespace BookStore
 {
     internal class Customer
     {
-        public Customer()
-        {
-            Basket = new Basket();
-        }
-
-
-        public Basket Basket;
+        public Customer(){ }
         public string Name { get; set; }
         public string Adress { get; set; }
         public double PhoneNumber { get; set; }
-        public string Mail { get; set; }
         public double Password { get; set; }
 
+        Basket basket = new Basket();   
 
-        public Customer(string nameSurname, string adress, double phoneNumber, double password, string mail)
+        public Customer(string nameSurname, string adress, double phoneNumber, double password)
         {
             Name = nameSurname;
             Adress = adress;
             PhoneNumber = phoneNumber;
             Password = password;
-            Mail = mail;
-            Basket = new Basket();
         }
 
         private static string DisplayMainMenuHeaders()
         {
-            Console.WriteLine("\nSelect process that you want to do:");
-            Console.WriteLine("------------------------------------------------");
-            Console.WriteLine("1- Display all books and their prices.");
-            Console.WriteLine("2- Display all publishers.");
-            Console.WriteLine("3- Add to basket books.");
-            Console.WriteLine("4- Remove from basket books.");
-            Console.WriteLine("5- Display basket.");
-            Console.WriteLine("6- Check Out the my order.");
-            Console.WriteLine("7- Display my own informations.");
-            Console.WriteLine("8- Filter genre of books.");
-            Console.WriteLine("9- Filter publishers.");
-            Console.WriteLine("10- Filter price.");
-            Console.WriteLine("11- Filter writer.");
-            Console.WriteLine("12 Order follow up.\n");
+            try
+            {
+                Console.WriteLine("\nSelect process that you want to do:");
+                Console.WriteLine("------------------------------------------------");
+                Console.WriteLine("1- Display all books and their prices.");
+                Console.WriteLine("2- Display all publishers.");
+                Console.WriteLine("3- Add to basket books.");
+                Console.WriteLine("4- Remove from basket books.");
+                Console.WriteLine("5- Display basket.");
+                Console.WriteLine("6- Check Out the my order.");
+                Console.WriteLine("7- Display my own informations.");
+                Console.WriteLine("8- Filter genre of books.");
+                Console.WriteLine("9- Filter publishers.");
+                Console.WriteLine("10- Filter price.");
+                Console.WriteLine("11- Filter writer.");
+                Console.WriteLine("12- Exit.\n");
 
-            string choose = Console.ReadLine();
-            Console.WriteLine();
-            return choose;
+                string choose = Console.ReadLine();
+                Console.WriteLine();
+                return choose;
+            }
+            catch (Exception a)
+            {
+                Console.WriteLine(a.Message);
+                return null;
+            }
+
         }
         private void GetChooseMainMenu(string choose)
         {
+            bool kontrol = false;
             if (choose == "1") DisplayAllBooks();
             else if (choose == "2") DisplayAllPublishers();
-            else if (choose == "3") Basket.AddNewBook();
+            else if (choose == "3") basket.AddNewBook();
             else if (choose == "4") Remove();
-            else if (choose == "5") Basket.DisplayBasketInfo();
+            else if (choose == "5") basket.DisplayBasketInfo();
             else if (choose == "6") CheckOut();
             else if (choose == "7") DisplayOwnInfo();
             else if (choose == "8") FilterGenres();
             else if (choose == "9") FilterPublisher();
             else if (choose == "10") FilterPrice();
             else if (choose == "11") FilterWriter();
-            else if (choose == "12") { }
+            else if (choose == "12") kontrol= true;
         }
         public void MainMenuProcess()
         {
@@ -132,15 +134,23 @@ namespace BookStore
         }
         private void DoPriceFilterByChoose(int choose)
         {
-            IBookPriceFilter filter = null;
+            try
+            {
+                IBookPriceFilter filter = null;
 
-            if (choose == 1) filter = new BookPriceFilter0_100();
-            else if (choose == 2) filter = new BookPriceFilter100_200();
-            else if (choose == 3) filter = new BookPriceFilter200_500();
-            else if (choose == 4) filter = new BookPriceFilter500Plus();
-            else if (choose == 5) filter = new BookPriceFilter1000Plus();
+                if (choose == 1) filter = new BookPriceFilter0_100();
+                else if (choose == 2) filter = new BookPriceFilter100_200();
+                else if (choose == 3) filter = new BookPriceFilter200_500();
+                else if (choose == 4) filter = new BookPriceFilter500Plus();
+                else if (choose == 5) filter = new BookPriceFilter1000Plus();
 
-            filter.Filter();
+                filter.Filter();
+            }
+            catch (Exception )
+            {
+                Console.WriteLine("1 ile 5 arasında seçim olmalıydı.");
+                return;
+            }
         }
         public void FilterPrice()
         {
@@ -228,7 +238,7 @@ namespace BookStore
         }
         public void CheckOut()
         {
-            Basket.DisplayBasketInfo();
+            basket.DisplayBasketInfo();
 
             Console.WriteLine("Enter the 1 for check out or 2 for return.");
             int choose = Convert.ToInt32(Console.ReadLine());
@@ -241,6 +251,7 @@ namespace BookStore
 
                 Console.WriteLine("Your order is checked out.\n");
                 Console.Write("Your order number: " + orderNumber);
+                Console.WriteLine();
             }
             else MainMenuProcess();
         }

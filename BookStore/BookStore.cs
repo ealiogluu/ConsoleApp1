@@ -182,6 +182,7 @@ namespace BookStore
 
             if (password == 1234567) MainMenuProcess();
             else Console.WriteLine("Password is wrong! Please try again.\n");
+
             EmployeeLogIn();
         }
 
@@ -275,6 +276,7 @@ namespace BookStore
         public void DisplayAllCustomers()
         {
             Console.WriteLine("***CUSTOMER INFORMATIONS***\n");
+
             foreach (var customer in Customers)
             {
                 Console.WriteLine("Customer Name and Surname: " + customer.Name);

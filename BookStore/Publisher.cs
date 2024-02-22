@@ -9,7 +9,6 @@ namespace BookStore
     internal class Publisher
     {
         public string PublishName;
-
         public Publisher(string publishName)
         {
             PublishName = publishName;

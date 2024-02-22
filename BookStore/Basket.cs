@@ -12,20 +12,15 @@ namespace BookStore
             string name = Console.ReadLine();
 
             foreach (Book book in BookStore.Books)
-            {
-                if (book.Name == name)
-                {
-                    books.Add(book);
-                }
-            }
+                if (book.Name == name)  books.Add(book);
         }
         public double GetTotalPrice()
         {
             double totalPrice = 0;
+
             foreach (Book book in books)
-            {
                 totalPrice += book.Price;
-            }
+
             return totalPrice;
         }
         public void DisplayBasketInfo()
@@ -37,9 +32,7 @@ namespace BookStore
 
 
             foreach (var b in books)
-            {
                 Console.WriteLine(b.Name + "\t|\t" + b.Price);
-            }
 
             Console.WriteLine("------------------------------------------");
             double t = GetTotalPrice();

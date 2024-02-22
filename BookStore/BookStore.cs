@@ -13,7 +13,6 @@ namespace BookStore
         public static List<Book> Books = new List<Book>();
         public static List<Publisher> Publishers = new List<Publisher>();
 
-
         public BookStore()
         {
             Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,"Can Yayınları");

@@ -26,15 +26,5 @@ namespace BookStore
             CategoryId = categoryId;
             Publisher = publisher;
         }
-        public void DisplayInfo()
-        {
-            Console.WriteLine("***Book Info***");
-
-            Console.WriteLine("Book Name\t: "+Name);
-            Console.WriteLine("Papers\t\t: "+PageCount);
-            Console.WriteLine("Writer\t\t: "+Writer);
-            Console.WriteLine("Category\t: " + CategoryId);
-            Console.WriteLine("Price\t\t: " + Price);
-        }
     }
 }

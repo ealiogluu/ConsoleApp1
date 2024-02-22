@@ -32,7 +32,8 @@ namespace BookStore
             Password = password;
             basket = new Basket();
         }
-        public void DisplayMainMenu()
+
+        private static string DisplayMainMenuHeaders()
         {
             Console.WriteLine("\nSelect process that you want to do:");
             Console.WriteLine("------------------------------------------------");
@@ -49,50 +50,30 @@ namespace BookStore
 
             string choose = Console.ReadLine();
             Console.WriteLine();
-
-            if (choose == "1")
-            {
-                DisplayAllBooks();
-            }
-            else if (choose == "2")
-            {
-                DisplayAllPublishers();
-            }
-            else if (choose == "3")
-            {
-                basket.AddNewBook();
-            }
-            else if (choose == "4")
-            {
-                Remove();
-            }
-            else if (choose == "5")
-            {
-                basket.DisplayBasketInfo();
-            }
-            else if (choose == "6")
-            {
-                CheckOut();
-            }
-            else if (choose == "7")
-            {
-                DisplayOwnInfo();
-            }
-            else if (choose == "8")
-            {
-                FilterGenres();
-            }
-            else if (choose == "9")
-            {
-                FilterPublisher();
-            }
-            else if (choose == "10")
-            {
-                FilterPrice();
-            }
-
-            DisplayMainMenu();
+            return choose;
         }
+        private void GetChooseMainMenu(string choose)
+        {
+            if (choose == "1") DisplayAllBooks();
+            else if (choose == "2") DisplayAllPublishers();
+            else if (choose == "3") basket.AddNewBook();
+            else if (choose == "4") Remove();
+            else if (choose == "5") basket.DisplayBasketInfo();
+            else if (choose == "6") CheckOut();
+            else if (choose == "7") DisplayOwnInfo();
+            else if (choose == "8") FilterGenres();
+            else if (choose == "9") FilterPublisher();
+            else if (choose == "10") FilterPrice();
+        }
+        public void MainMenuProcess()
+        {
+            string choose = DisplayMainMenuHeaders();
+
+            GetChooseMainMenu(choose);
+
+            MainMenuProcess();
+        }
+
         public void DisplayAllBooks()
         {
             Console.WriteLine("\t\tAll Books");
@@ -144,7 +125,7 @@ namespace BookStore
             Console.WriteLine();
 
             if (choose == 1) Console.WriteLine("Your order is checked out.\n");
-            else DisplayMainMenu();
+            else MainMenuProcess();
 
         }
 

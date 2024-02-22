@@ -72,9 +72,9 @@ namespace BookStore
             Publishers.Add(publish10);
             Publishers.Add(publish11);
         }
-        public void DisplayMainMenu()
-        {
 
+        private static string DisplayMainMenuHeaders()
+        {
             Console.WriteLine("***Welcome to BookStore***\n");
             Console.WriteLine("Please select that you want to do.\n");
             Console.WriteLine("1- Add new book to system.");
@@ -89,41 +89,27 @@ namespace BookStore
 
             string choose = Console.ReadLine();
             Console.WriteLine();
-
-            if (choose == "1")
-            {
-                AddNewBook();
-            }
-            else if (choose == "2")
-            {
-                RemoveBook();
-            }
-            else if (choose == "3")
-            {
-                SearchBook();
-            }
-            else if (choose == "4")
-            {
-                DisplayAllBooks();
-            }
-            else if (choose == "5")
-            {
-                DisplayAllCustomers();
-            }
-            else if (choose == "6")
-            {
-                AddNewCustomer();
-            }
-            else if (choose == "7")
-            {
-                RemoveCustomer();
-            }
-            else if (choose == "8")
-            {
-                SearchBook();
-            }
-            DisplayMainMenu();
+            return choose;
         }
+        private void GetChooseMainMenu(string choose)
+        {
+            if (choose == "1")      AddNewBook();
+            else if (choose == "2") RemoveBook();
+            else if (choose == "3") SearchBook();
+            else if (choose == "4") DisplayAllBooks();
+            else if (choose == "5") DisplayAllCustomers();
+            else if (choose == "6") AddNewCustomer();
+            else if (choose == "7") RemoveCustomer();
+            else if (choose == "8") SearchBook();
+        }
+        public void MainMenuProcess()
+        {
+            string choose = DisplayMainMenuHeaders();
+
+            GetChooseMainMenu(choose);
+            MainMenuProcess();
+        }               
+
         public void LogInToSystem()
         {
             Console.WriteLine("***Welcome to BookStore***\n");
@@ -133,14 +119,8 @@ namespace BookStore
             int secim = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
 
-            if (secim == 1)
-            {
-                UserProcess();
-            }
-            else if (secim == 2)
-            {
-                EmployeeLogIn();
-            }
+            if (secim == 1)      UserProcess();
+            else if (secim == 2) EmployeeLogIn();
         }
         public void UserProcess()
         {
@@ -148,15 +128,8 @@ namespace BookStore
             Console.WriteLine("2- Log in.");
             int choose = Convert.ToInt32(Console.ReadLine());
 
-            if (choose == 1)
-            {
-                SignIn();
-            }
-            else if (choose == 2)
-            {
-                UserLogIn();
-            }
-
+            if (choose == 1)      SignIn();
+            else if (choose == 2) UserLogIn();
         }
         public void SignIn()
         {
@@ -195,7 +168,7 @@ namespace BookStore
             {
                 if (customer.Name == chooseName && customer.Password == choosePassword)
                 {
-                    customer.DisplayMainMenu();
+                    customer.MainMenuProcess();
                     return;
                 }
             }
@@ -207,7 +180,7 @@ namespace BookStore
             Console.Write("System Password: ");
             double password = Convert.ToDouble(Console.ReadLine());
 
-            if (password == 1234567) DisplayMainMenu();
+            if (password == 1234567) MainMenuProcess();
             else Console.WriteLine("Password is wrong! Please try again.\n");
             EmployeeLogIn();
         }

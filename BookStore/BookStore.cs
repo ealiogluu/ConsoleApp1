@@ -299,5 +299,15 @@ namespace BookStore
             }
             Console.WriteLine("Customer is removed.");
         }
+
+        public void FilterAllPropertiesOfBooks()
+        {
+            Console.WriteLine("Do filters that you want to make.\n");
+
+
+            string chooseWriter = Console.ReadLine();
+            string chooseGenre = Console.ReadLine();
+            int choosePrice = Convert.ToInt32(Console.ReadLine());
+        }
     }
 }

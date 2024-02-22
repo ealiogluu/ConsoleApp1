@@ -128,13 +128,13 @@ namespace BookStore
             Console.WriteLine("3- 200-500");
             Console.WriteLine("4- 500++");
 
-            int choose = Convert.ToInt32(Console.ReadLine());
+            int choosePrice = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("\t\tAll Books That You FiLtered");
             Console.WriteLine("------------------------------------------------");
             Console.WriteLine("Book Name   |   Category   |   Price");
             Console.WriteLine("------------------------------------------------\n");
-            return choose;
+            return choosePrice;
         }
         private void DoPriceFilterByChoose(int choose)
         {

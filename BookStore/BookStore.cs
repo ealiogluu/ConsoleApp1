@@ -15,6 +15,7 @@ namespace BookStore
         public static List<Book> Books = new List<Book>();
         public static List<Publisher> Publishers = new List<Publisher>();
 
+        Customer customer= new Customer();
         public BookStore()
         {
             Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,"Can Yayınları");
@@ -149,7 +150,7 @@ namespace BookStore
             string name = Console.ReadLine();
             Console.WriteLine();
 
-            foreach (Book book in .Books)
+            foreach (Book book in Books)
             {
                 if (name == book.Name)
                 {
@@ -304,18 +305,28 @@ namespace BookStore
             EmployeeLogIn();
         }
 
-
-
         //public void FilterAllPropertiesOfBooks()
         //{
         //    Console.WriteLine("Do filters that you want to make.\n");
 
-
+        //    Console.Write("Writer: ");
         //    string chooseWriter = Console.ReadLine();
-        //    string chooseGenre = Console.ReadLine();
-        //    int choosePrice = Convert.ToInt32(Console.ReadLine());
+
+        //    Console.Write("Publisher: ");
+        //    string choosePublish = Console.ReadLine();
+
+        //    foreach (Book book in Books)
+        //    {
+        //        if (choosePublish== book.Publisher && chooseWriter == book.Writer)
+        //        {
+        //            Console.WriteLine("\tBooks");
+        //            Console.WriteLine("-------------------------------");
+        //            Console.WriteLine("Book Name \t|\t Writer\t|\t Publisher \t|\t");
+        //            Console.WriteLine("-------------------------------");
+        //            Console.WriteLine(book.Name + "\t|\t"+ book.Writer +"\t|\t"+ book.Publisher);
+        //        }
+        //    }
+
         //}
-
-
     }
 }

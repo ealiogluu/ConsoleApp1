@@ -6,7 +6,7 @@ namespace BookStore
     internal class Basket
     {
         public static List<Book> books = new List<Book>(); 
-        public void Add()
+        public void AddNewBook()
         {
             Console.WriteLine("add book to basket that you want. ");
             string name = Console.ReadLine();

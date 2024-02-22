@@ -2,13 +2,13 @@
 
 namespace BookStore.BookFilters
 {
-    internal class BookFilter0_100 : IBookFilter
+    internal class BookPriceFilter200_500 : IBookPriceFilter
     {
         public void Filter()
         {
             foreach (Book book in BookStore.Books)
             {
-                if (book.Price > 0 && book.Price < 100)
+                if (book.Price > 200 && book.Price < 500)
                 {
                     Console.WriteLine(book.Name + "\t\t" + book.Category + "\t\t" + book.Price);
                     Console.WriteLine("------------------------------------------------");

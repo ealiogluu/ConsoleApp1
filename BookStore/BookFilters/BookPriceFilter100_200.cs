@@ -2,7 +2,7 @@
 
 namespace BookStore.BookFilters
 {
-    internal class BookFilter100_200: IBookFilter
+    internal class BookPriceFilter100_200: IBookPriceFilter
     {
         public void Filter()
         {

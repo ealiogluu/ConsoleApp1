@@ -16,7 +16,6 @@ namespace BookStore
         public Customer()
         {
             basket = new Basket();
-            //customers = new List<Customer>();
         }
 
         public Basket basket;
@@ -61,7 +60,7 @@ namespace BookStore
             }
             else if (choose == "3")
             {
-                basket.Add();
+                basket.AddNewBook();
             }
             else if (choose == "4")
             {
@@ -110,6 +109,14 @@ namespace BookStore
 
             FilterGenres();
         }
+        public void DisplayOwnInfo()
+        {
+            Console.WriteLine("***MY INFORMATIONS***\n");
+            Console.WriteLine("Name and Surname: " + Name);
+            Console.WriteLine("Phone Number: " + PhoneNumber);
+            Console.WriteLine("Adress: " + Adress);
+            Console.WriteLine();
+        }
         public void Remove()
         {
             Console.WriteLine("Enter book name that you want to remove from your basket.");
@@ -128,14 +135,6 @@ namespace BookStore
             }
 
         }
-        public void DisplayOwnInfo()
-        {
-            Console.WriteLine("***MY INFORMATIONS***\n");
-            Console.WriteLine("Name and Surname: " + Name);
-            Console.WriteLine("Phone Number: " + PhoneNumber);
-            Console.WriteLine("Adress: " + Adress);
-            Console.WriteLine();
-        }
         public void CheckOut()
         {
             basket.DisplayBasketInfo();
@@ -148,22 +147,8 @@ namespace BookStore
             else DisplayMainMenu();
 
         }
-        public void FilterGenres()
-        {
-            int choose = DisplayFilterGenresHeaders();
 
-            DoGenresFilterByChoose(choose);
-        }
-        private static void DoGenresFilterByChoose(int choose)
-        {
-            IGenresFilter filter = null;
 
-            if (choose == 1) filter = new GenresFilterNovels();
-            else if (choose == 2) filter = new GenresFilterPoem();
-            else if (choose == 3) filter = new GenresFilterStories();
-
-            filter.FilterPrice(choose);
-        }
         private static int DisplayFilterGenresHeaders()
         {
             Console.WriteLine("Which types of books do you want?");
@@ -179,12 +164,24 @@ namespace BookStore
             Console.WriteLine("------------------------------------------------\n");
             return choose;
         }
-        public void FilterPrice()
+        private static void DoGenresFilterByChoose(int choose)
         {
-            int choose = DisplayFilterPriceHeaders();
+            IGenresFilter filter = null;
 
-            DoFilterByChoose(choose);
+            if (choose == 1)      filter = new GenresFilterNovels();
+            else if (choose == 2) filter = new GenresFilterPoem();
+            else if (choose == 3) filter = new GenresFilterStories();
+
+            filter.FilterPrice(choose);
         }
+        public void FilterGenres()
+        {
+            int choose = DisplayFilterGenresHeaders();
+
+            DoGenresFilterByChoose(choose);
+        }
+
+
         private static int DisplayFilterPriceHeaders()
         {
             Console.WriteLine("Which interval of price are you looking at?");
@@ -201,18 +198,26 @@ namespace BookStore
             Console.WriteLine("------------------------------------------------\n");
             return choose;
         }
-        private void DoFilterByChoose(int choose)
+        private void DoPriceFilterByChoose(int choose)
         {
-            IBookFilter filter = null;
+            IBookPriceFilter filter = null;
 
-            if (choose == 1)      filter = new BookFilter0_100();
-            else if (choose == 2) filter = new BookFilter100_200();
-            else if (choose == 3) filter = new BookFilter200_500();
-            else if (choose == 4) filter = new BookFilter500Plus();
-            else if (choose == 5) filter = new BookFilter1000Plus();
+            if (choose == 1)      filter = new BookPriceFilter0_100();
+            else if (choose == 2) filter = new BookPriceFilter100_200();
+            else if (choose == 3) filter = new BookPriceFilter200_500();
+            else if (choose == 4) filter = new BookPriceFilter500Plus();
+            else if (choose == 5) filter = new BookPriceFilter1000Plus();
 
             filter.Filter();
         }
+        public void FilterPrice()
+        {
+            int choose = DisplayFilterPriceHeaders();
+
+            DoPriceFilterByChoose(choose);
+        }
+
+
         public void FilterPublisher()
         {
             Console.WriteLine("Which publisher of books do you search?");

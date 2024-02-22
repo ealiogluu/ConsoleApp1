@@ -3,7 +3,7 @@
     /// <summary>
     /// kitaplar filtrelemek için arayüz.
     /// </summary>
-    public interface IBookFilter
+    public interface IBookPriceFilter
     {
         void Filter();
     }

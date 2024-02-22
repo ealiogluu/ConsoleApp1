@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Basket.cs" />
     <Compile Include="Book.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="PriceFilter\BookPriceFilter0_100.cs" />
     <Compile Include="PriceFilter\BookPriceFilter1000Plus.cs" />
     <Compile Include="PriceFilter\BookPriceFilter100_200.cs" />

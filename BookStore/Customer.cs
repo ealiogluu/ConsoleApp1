@@ -13,6 +13,7 @@ namespace BookStore
 {
     internal class Customer
     {
+
         public Customer()
         {
             basket = new Basket();
@@ -22,14 +23,17 @@ namespace BookStore
         public string Name { get; set; }
         public string Adress { get; set; }
         public double PhoneNumber { get; set; }
+        public string Mail { get; set; }
         public double Password { get; set; }
 
-        public Customer(string nameSurname, string adress, double phoneNumber, double password)
+
+        public Customer(string nameSurname, string adress, double phoneNumber, double password, string mail)
         {
             Name = nameSurname;
             Adress = adress;
             PhoneNumber = phoneNumber;
             Password = password;
+            Mail = mail;
             basket = new Basket();
         }
 
@@ -47,7 +51,8 @@ namespace BookStore
             Console.WriteLine("8- Filter genre of books.");
             Console.WriteLine("9- Filter publishers.");
             Console.WriteLine("10- Filter price.");
-            Console.WriteLine("11- Filter writer.\n");
+            Console.WriteLine("11- Filter writer.");
+            Console.WriteLine("12 Order follow up.\n");
 
             string choose = Console.ReadLine();
             Console.WriteLine();
@@ -66,6 +71,7 @@ namespace BookStore
             else if (choose == "9")  FilterPublisher();
             else if (choose == "10") FilterPrice();
             else if (choose == "11") FilterWriter();
+            else if (choose =="12") { }
         }
         public void MainMenuProcess()
         {
@@ -118,6 +124,8 @@ namespace BookStore
 
             if (choose == 1) Console.WriteLine("Your order is checked out.\n");
             else MainMenuProcess();
+
+
 
         }
         private static int DisplayFilterPriceHeaders()
@@ -215,7 +223,7 @@ namespace BookStore
             else if (choose == 2) filter = new GenresFilterPoem();
             else if (choose == 3) filter = new GenresFilterStories();
 
-            filter.FilterPrice(choose);
+            filter.FilterGenre(choose);
         }
         public void FilterGenres()
         {

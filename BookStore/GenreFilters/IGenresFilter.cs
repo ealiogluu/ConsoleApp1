@@ -8,6 +8,6 @@ namespace BookStore.PriceFilter
 {
     public interface IGenresFilter
     {
-        void FilterPrice(int choose);
+        void FilterGenre(int choose);
     }
 }

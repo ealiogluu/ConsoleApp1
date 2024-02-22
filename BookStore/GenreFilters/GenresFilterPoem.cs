@@ -8,7 +8,7 @@ namespace BookStore.PriceFilter
 {
     internal class GenresFilterPoem : IGenresFilter
     {
-        public void FilterPrice(int choose)
+        public void FilterGenre(int choose)
         {
             foreach (Book book in BookStore.Books)
             {

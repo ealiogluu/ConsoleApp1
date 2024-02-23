@@ -104,17 +104,24 @@ namespace BookStore
         }
         private void GetChooseMainMenu(string choose)
         {
-            bool kontrol = false;
-            if (choose == "1") AddNewBook();
-            else if (choose == "2") RemoveBook();
-            else if (choose == "3") SearchBook();
-            else if (choose == "4") DisplayAllBooks();
-            else if (choose == "5") DisplayAllCustomers();
-            else if (choose == "6") AddNewCustomer();
-            else if (choose == "7") RemoveCustomer();
-            else if (choose == "8") SearchBook();
-            else if (choose == "9") DisplayOrders();
-            else if (choose == "10") kontrol = true;
+            try
+            {
+                bool kontrol = false;
+                if (choose == "1") AddNewBook();
+                else if (choose == "2") RemoveBook();
+                else if (choose == "3") SearchBook();
+                else if (choose == "4") DisplayAllBooks();
+                else if (choose == "5") DisplayAllCustomers();
+                else if (choose == "6") AddNewCustomer();
+                else if (choose == "7") RemoveCustomer();
+                else if (choose == "8") SearchBook();
+                else if (choose == "9") DisplayOrders();
+                else if (choose == "10") kontrol = true;
+            }
+            catch (Exception a)
+            {
+                Console.WriteLine(a.Message);
+            }
         }
         public void MainMenuProcess()
         {
@@ -123,7 +130,6 @@ namespace BookStore
             GetChooseMainMenu(choose);
             MainMenuProcess();
         }
-
         public void AddNewBook()
         {
             var book = new Book();
@@ -312,7 +318,6 @@ namespace BookStore
 
             EmployeeLogIn();
         }
-
         public void DisplayOrders()
         {
             Console.WriteLine("\tAll Orders");

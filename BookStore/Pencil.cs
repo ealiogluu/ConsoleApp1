@@ -10,5 +10,11 @@ namespace BookStore
     {
         public string Brand { get; set; }
         public string Color { get; set; }
+
+        public Pencil(string brand, string color)
+        {
+            Brand = brand;
+            Color = color;
+        }
     }
 }

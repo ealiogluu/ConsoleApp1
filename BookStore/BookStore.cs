@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace BookStore
 {
     /// <summary>
-    /// kitapçı
+    /// Sadece çalışanların erişebildiği online mağaza 
     /// </summary>
     internal class BookStore
     {
@@ -15,9 +15,12 @@ namespace BookStore
         public static List<Book> Books = new List<Book>();
         public static List<Publisher> Publishers = new List<Publisher>();
         public static List<Order> Orders = new List<Order>();
+        public static List<Pencil> Pencils = new List<Pencil>();
         public static List<StationeryProduct> Products = new List<StationeryProduct>();
         public BookStore()
         {
+            //Books
+
             Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,"Can Yayınları");
             Book book2 = new Book("Suç ve Ceza", 650, "Dostoyevski", "Novel", 250, 1, "Yapı Kredi Yayınları");
             Book book3 = new Book("İçimizdeki Şeytan", 67, "Sabahattin Ali", "Novel", 45, 1, "Everest Yayınları");
@@ -38,11 +41,13 @@ namespace BookStore
             Books.Add(book8);
             Books.Add(book9);
 
-            StationeryProduct product1 = new StationeryProduct("Notebook",1);
-            StationeryProduct product2 = new StationeryProduct("Pencil",2);
-            StationeryProduct product3 = new StationeryProduct("Text Book",3);
-            StationeryProduct product4 = new StationeryProduct("Rubber",4);
-            StationeryProduct product5 = new StationeryProduct("Pen",5);
+            //StationeryProduct product1 = new StationeryProduct("Notebook",1);
+            //StationeryProduct product2 = new StationeryProduct("Pencil",2);
+            //StationeryProduct product3 = new StationeryProduct("Text Book",3);
+            //StationeryProduct product4 = new StationeryProduct("Rubber",4);
+            //StationeryProduct product5 = new StationeryProduct("Pen",5);
+
+            //Customers
 
             Customer customer1 = new Customer("Emine Nur Alioğlu", "Barıs mah.", 5337161659, 1234);
             Customer customer2 = new Customer("Ayse Kaya", "baris", 5306639944, 567);
@@ -55,6 +60,8 @@ namespace BookStore
             Customers.Add(customer3);
             Customers.Add(customer4);
             Customers.Add(customer5);
+
+            //Publishers
 
             Publisher publish1 = new Publisher("Can Yayınları");
             Publisher publish2 = new Publisher("İş Bankası Yayınları");
@@ -80,6 +87,8 @@ namespace BookStore
             Publishers.Add(publish10);
             Publishers.Add(publish11);
 
+            //Just for trying orders
+
             Order order1 = new Order(12435677);
             Order order2 = new Order(84670477);
             Order order3 = new Order(08327507);
@@ -87,6 +96,20 @@ namespace BookStore
             Orders.Add(order1);
             Orders.Add(order2);
             Orders.Add(order3);
+
+            //Pencil 
+
+            Pencil pencil1 = new Pencil("Pensan","Red",56);
+            Pencil pencil2 = new Pencil("Pensan","Blue",100);
+            Pencil pencil3 = new Pencil("Pensan","Black",79);
+            Pencil pencil4 = new Pencil("Faber Castel","Pink",90);
+            Pencil pencil5 = new Pencil("Faber Castel","Red",80);
+
+            Pencils.Add(pencil1);
+            Pencils.Add(pencil2);
+            Pencils.Add(pencil3);
+            Pencils.Add(pencil4);
+            Pencils.Add(pencil5);
         }
 
 
@@ -97,13 +120,13 @@ namespace BookStore
             Console.WriteLine("1- Add new book to system.");
             Console.WriteLine("2 Remove book.");
             Console.WriteLine("3- Search book.");
-            Console.WriteLine("4- Display all books.");
-            Console.WriteLine("5- Display all customers.");
-            Console.WriteLine("6- Add new customer.");
-            Console.WriteLine("7- Remove customer.");
-            Console.WriteLine("8- Search book.");
-            Console.WriteLine("9- Display orders.");
-            Console.WriteLine("10- Exit.");
+            Console.WriteLine("4- Display al categories.");
+            Console.WriteLine("5- Display all books.");
+            Console.WriteLine("6- Display all customers.");
+            Console.WriteLine("7- Add new customer.");
+            Console.WriteLine("8- Remove customer.");
+            Console.WriteLine("9- Search book.");
+            Console.WriteLine("10- Display orders.");
 
             string choose = Console.ReadLine();
             Console.WriteLine();
@@ -113,21 +136,20 @@ namespace BookStore
         {
             try
             {
-                bool kontrol = false;
-                if (choose == "1") AddNewBook();
-                else if (choose == "2") RemoveBook();
-                else if (choose == "3") SearchBook();
-                else if (choose == "4") DisplayAllBooks();
-                else if (choose == "5") DisplayAllCustomers();
-                else if (choose == "6") AddNewCustomer();
-                else if (choose == "7") RemoveCustomer();
-                else if (choose == "8") SearchBook();
-                else if (choose == "9") DisplayOrders();
-                else if (choose == "10") kontrol = true;
+                if (choose == "1")       AddNewBook();
+                else if (choose == "2")  RemoveBook();
+                else if (choose == "3")  SearchBook();
+              //else if (choose == "4") 
+                else if (choose == "5")  DisplayAllBooks();
+                else if (choose == "6")  DisplayAllCustomers();
+                else if (choose == "7")  AddNewCustomer();
+                else if (choose == "8")  RemoveCustomer();
+                else if (choose == "9")  SearchBook();
+                else if (choose == "10") DisplayOrders();
             }
-            catch (Exception a)
+            catch (Exception ex)
             {
-                Console.WriteLine(a.Message);
+                Console.WriteLine("You should enter between 1 and 10.");
             }
         }
         public void MainMenuProcess()
@@ -223,6 +245,22 @@ namespace BookStore
 
             Customers.Add(customer);
         }
+        public void DisplayAllCategories()
+        {
+            Console.WriteLine("Whic category do you search?");
+            Console.WriteLine("1- Books");
+            Console.WriteLine("2- Pencils");
+
+            int choose= Convert.ToInt32(Console.ReadLine());
+
+            if (choose==1)
+            {
+                foreach (Book book in Books)
+                {
+                    Console.WriteLine();
+                }
+            }
+        }  //To do
         public void DisplayAllCustomers()
         {
             Console.WriteLine("***CUSTOMER INFORMATIONS***\n");

@@ -15,6 +15,7 @@ namespace BookStore
         public static List<Book> Books = new List<Book>();
         public static List<Publisher> Publishers = new List<Publisher>();
         public static List<Order> Orders = new List<Order>();
+        public static List<StationeryProduct> Products = new List<StationeryProduct>();
         public BookStore()
         {
             Book book1 = new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1,"Can Yayınları");
@@ -36,6 +37,12 @@ namespace BookStore
             Books.Add(book7);
             Books.Add(book8);
             Books.Add(book9);
+
+            StationeryProduct product1 = new StationeryProduct("Notebook",1);
+            StationeryProduct product2 = new StationeryProduct("Pencil",2);
+            StationeryProduct product3 = new StationeryProduct("Text Book",3);
+            StationeryProduct product4 = new StationeryProduct("Rubber",4);
+            StationeryProduct product5 = new StationeryProduct("Pen",5);
 
             Customer customer1 = new Customer("Emine Nur Alioğlu", "Barıs mah.", 5337161659, 1234);
             Customer customer2 = new Customer("Ayse Kaya", "baris", 5306639944, 567);

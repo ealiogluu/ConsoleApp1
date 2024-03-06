@@ -22,12 +22,15 @@ namespace LogInPage
             string userName = textBoxUserName.Text;
             string password = textBoxPassword.Text;
 
-            if (userName == "nurralioglu" && password == "12345")
-                labelOutCome.Text = "Log In is successful.";
-            else if (userName != "nurralioglu")
-                labelOutCome.Text = "User name is wrong.";
-            else if (password != "12345")
-                labelOutCome.Text = "Password is wrong.";
+            if (userName == "nurralioglu")
+            {
+                if (password == "1234")
+                    labelOutCome.Text = "Log In is successful.";
+
+                else labelOutCome.Text = "Password is wrong.";
+            }
+
+            else labelOutCome.Text= "User name is wrong."; 
         }
     }
 }

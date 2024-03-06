@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E8A0AEBF-ACCE-44E3-94EE-14FB8F997599}</ProjectGuid>
+    <ProjectGuid>{091D274D-D7FE-48D5-ABDD-E755A0C35C13}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BookStoreForm</RootNamespace>
-    <AssemblyName>BookStoreForm</AssemblyName>
+    <RootNamespace>StudyingForms1</RootNamespace>
+    <AssemblyName>StudyingForms1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

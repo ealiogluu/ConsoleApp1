@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookStoreForm
+namespace LogInPage
 {
     public partial class Form1 : Form
     {
@@ -16,16 +16,5 @@ namespace BookStoreForm
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            label1.Visible = true;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

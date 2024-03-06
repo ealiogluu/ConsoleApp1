@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore", "BookStore\Book
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogInPage", "LogInPage\LogInPage.csproj", "{03125131-E1D6-41E1-9193-0A03087889EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsComboBox", "ForsComboBox\FormsComboBox.csproj", "{B6DB1D60-1A31-4649-B0EB-750588F08645}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{03125131-E1D6-41E1-9193-0A03087889EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03125131-E1D6-41E1-9193-0A03087889EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03125131-E1D6-41E1-9193-0A03087889EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DB1D60-1A31-4649-B0EB-750588F08645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DB1D60-1A31-4649-B0EB-750588F08645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DB1D60-1A31-4649-B0EB-750588F08645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DB1D60-1A31-4649-B0EB-750588F08645}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

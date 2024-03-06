@@ -31,8 +31,9 @@
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.labelOutCome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxUserName
@@ -65,13 +66,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Password : ";
             // 
-            // textBox1
+            // textBoxPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 73);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 26);
-            this.textBox1.TabIndex = 3;
+            this.textBoxPassword.Location = new System.Drawing.Point(136, 73);
+            this.textBoxPassword.Multiline = true;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(259, 26);
+            this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // button1
             // 
@@ -82,6 +84,17 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Log In";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // labelOutCome
+            // 
+            this.labelOutCome.AutoSize = true;
+            this.labelOutCome.BackColor = System.Drawing.Color.White;
+            this.labelOutCome.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOutCome.Location = new System.Drawing.Point(595, 103);
+            this.labelOutCome.Name = "labelOutCome";
+            this.labelOutCome.Size = new System.Drawing.Size(0, 26);
+            this.labelOutCome.TabIndex = 5;
             // 
             // Form1
             // 
@@ -89,8 +102,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(800, 244);
+            this.Controls.Add(this.labelOutCome);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxUserName);
@@ -106,8 +120,9 @@
         private System.Windows.Forms.TextBox textBoxUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelOutCome;
     }
 }
 

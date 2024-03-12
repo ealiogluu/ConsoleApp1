@@ -44,7 +44,6 @@ namespace BookStore
                 Console.WriteLine("9- Filter publishers.");
                 Console.WriteLine("10- Filter price.");
                 Console.WriteLine("11- Filter writer.");
-                Console.WriteLine("12- Exit.\n");
 
                 string choose = Console.ReadLine();
                 Console.WriteLine();
@@ -52,7 +51,6 @@ namespace BookStore
         }
         private void GetChooseMainMenu(string choose)
         {
-            bool kontrol = false;
             if (choose == "1") DisplayAllBooks();
             else if (choose == "2") DisplayAllPublishers();
             else if (choose == "3") basket.AddNewBook();
@@ -64,7 +62,6 @@ namespace BookStore
             else if (choose == "9") FilterPublisher();
             else if (choose == "10") FilterPrice();
             else if (choose == "11") FilterWriter();
-            else if (choose == "12") kontrol= true;
         }
         public void MainMenuProcess()
         {

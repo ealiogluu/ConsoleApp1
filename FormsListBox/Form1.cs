@@ -47,5 +47,6 @@ namespace FormsListBox
                 listBox1.Items.Remove(isim);
             }
         }
+
     }
 }

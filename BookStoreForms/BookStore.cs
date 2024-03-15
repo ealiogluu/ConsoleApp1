@@ -19,15 +19,6 @@ namespace BookStoreForms
             Clients.Add(client1);
         }
 
-        public void UserLogIn()
-        {
-            Console.Write("Name: ");
-            string name = Console.ReadLine();
-
-            Console.Write("Password: ");
-            int password = Convert.ToInt32(Console.ReadLine());
-
-        }
 
     }
 }

@@ -17,27 +17,23 @@ namespace BookStoreForms
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void LogInButton_Click(object sender, EventArgs e)
         {
+            string userName = userNameTextBox.Text;
+            string password = passwordTextBox.Text;
 
             foreach (Client client in BookStore.Clients)
             {
-                if (userName.Text == "Azra")
+                if (userName == client.Name)
                 {
-                    if (password.Text == "123")
+                    if (password == client.Password)
                     {
-                        result.Text = "Log in successful.";
+                        resultLabel.Text = "Log in successful.";
                     }
-                    else result.Text = "Password is wrong.";
+                    else resultLabel.Text = "Password is wrong.";
                 }
-
-                else result.Text = "User name is worng!";
+                else resultLabel.Text = "User name is worng!";
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
     }

@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.userName = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
+            this.LogInButton = new System.Windows.Forms.Button();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.labelUserName = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
-            this.result = new System.Windows.Forms.Label();
+            this.resultLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // LogInButton
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(303, 245);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 75);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Log In";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.LogInButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.LogInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LogInButton.Location = new System.Drawing.Point(303, 245);
+            this.LogInButton.Name = "LogInButton";
+            this.LogInButton.Size = new System.Drawing.Size(164, 75);
+            this.LogInButton.TabIndex = 0;
+            this.LogInButton.Text = "Log In";
+            this.LogInButton.UseVisualStyleBackColor = false;
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
-            // userName
+            // userNameTextBox
             // 
-            this.userName.Location = new System.Drawing.Point(348, 78);
-            this.userName.Multiline = true;
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(216, 42);
-            this.userName.TabIndex = 1;
+            this.userNameTextBox.Location = new System.Drawing.Point(348, 78);
+            this.userNameTextBox.Multiline = true;
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(216, 42);
+            this.userNameTextBox.TabIndex = 1;
             // 
-            // password
+            // passwordTextBox
             // 
-            this.password.Location = new System.Drawing.Point(324, 164);
-            this.password.Multiline = true;
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(216, 41);
-            this.password.TabIndex = 2;
+            this.passwordTextBox.Location = new System.Drawing.Point(348, 165);
+            this.passwordTextBox.Multiline = true;
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(216, 41);
+            this.passwordTextBox.TabIndex = 2;
             // 
             // labelUserName
             // 
@@ -86,30 +86,30 @@
             this.labelPassword.TabIndex = 4;
             this.labelPassword.Text = "Password";
             // 
-            // result
+            // resultLabel
             // 
-            this.result.AutoSize = true;
-            this.result.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.result.Location = new System.Drawing.Point(613, 370);
-            this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(43, 16);
-            this.result.TabIndex = 5;
-            this.result.Text = "            ";
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.resultLabel.Location = new System.Drawing.Point(481, 357);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(128, 42);
+            this.resultLabel.TabIndex = 5;
+            this.resultLabel.Text = "          ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.result);
+            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUserName);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.userName);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.userNameTextBox);
+            this.Controls.Add(this.LogInButton);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,12 +117,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox userName;
-        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.Button LogInButton;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.Label result;
+        private System.Windows.Forms.Label resultLabel;
     }
 }
 

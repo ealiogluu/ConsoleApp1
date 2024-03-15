@@ -32,5 +32,10 @@ namespace LogInPage
 
             else labelOutCome.Text= "User name is wrong."; 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

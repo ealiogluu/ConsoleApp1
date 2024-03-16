@@ -19,9 +19,9 @@ namespace BookStoreForms
         }
         private void LogInButton_Click(object sender, EventArgs e)
         {
+
             string userName = userNameTextBox.Text;
             string password = passwordTextBox.Text;
-
             foreach (Client client in BookStore.Clients)
             {
                 if (userName == client.Name)
@@ -29,6 +29,7 @@ namespace BookStoreForms
                     if (password == client.Password)
                     {
                         resultLabel.Text = "Log in successful.";
+                        return;
                     }
                     else resultLabel.Text = "Password is wrong.";
                 }

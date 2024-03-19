@@ -55,6 +55,8 @@
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(216, 42);
             this.userNameTextBox.TabIndex = 1;
+            this.userNameTextBox.MouseEnter += new System.EventHandler(this.userNameTextBox_MouseEnter);
+            this.userNameTextBox.MouseLeave += new System.EventHandler(this.userNameTextBox_MouseLeave);
             // 
             // passwordTextBox
             // 

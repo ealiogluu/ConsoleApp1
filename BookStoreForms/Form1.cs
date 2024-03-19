@@ -19,23 +19,34 @@ namespace BookStoreForms
         }
         private void LogInButton_Click(object sender, EventArgs e)
         {
-
             string userName = userNameTextBox.Text;
             string password = passwordTextBox.Text;
+
             foreach (Client client in BookStore.Clients)
             {
                 if (userName == client.Name)
                 {
                     if (password == client.Password)
                     {
-                        resultLabel.Text = "Log in successful.";
-                        return;
+                        MessageBox.Show("log in successful.");
                     }
-                    else resultLabel.Text = "Password is wrong.";
+                    else MessageBox.Show("Password is wrong.");
                 }
-                else resultLabel.Text = "User name is worng!";
+                else MessageBox.Show("User name is wrong.");
             }
+        }
 
+        private void userNameTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            userNameTextBox.Text = "UserName";
+            userNameTextBox.BackColor = SystemColors.Window;
+
+        }
+
+        private void userNameTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            userNameTextBox = null;
+            
         }
     }
 }

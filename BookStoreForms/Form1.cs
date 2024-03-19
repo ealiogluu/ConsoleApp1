@@ -17,10 +17,14 @@ namespace BookStoreForms
         {
             InitializeComponent();
         }
+
+
         private void LogInButton_Click(object sender, EventArgs e)
         {
             string userName = userNameTextBox.Text;
             string password = passwordTextBox.Text;
+
+            //var store = new BookStore();
 
             foreach (Client client in BookStore.Clients)
             {
@@ -80,6 +84,16 @@ namespace BookStoreForms
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void userNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

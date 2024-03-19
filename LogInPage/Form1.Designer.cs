@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(800, 244);
+            this.ClientSize = new System.Drawing.Size(430, 244);
             this.Controls.Add(this.labelOutCome);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxPassword);

@@ -38,15 +38,47 @@ namespace BookStoreForms
 
         private void userNameTextBox_MouseEnter(object sender, EventArgs e)
         {
-            userNameTextBox.Text = "UserName";
-            userNameTextBox.BackColor = SystemColors.Window;
 
+            if (userNameTextBox.Text== "UserName")
+            {
+                userNameTextBox.Text = null;
+                userNameTextBox.ForeColor = Color.Black;
+            }
         }
 
         private void userNameTextBox_MouseLeave(object sender, EventArgs e)
         {
-            userNameTextBox = null;
+   
+            if (userNameTextBox.Text == null )
+            { 
+                userNameTextBox.Text = "UserName";
+                userNameTextBox.ForeColor = Color.Silver;
+            }
             
+        }
+
+        private void passwordTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (passwordTextBox.Text == "Password")
+            {
+                passwordTextBox.Text = null;
+                passwordTextBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void passwordTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (passwordTextBox.Text == null)
+            {
+                passwordTextBox.Text = "Password";
+                passwordTextBox.ForeColor = Color.Silver;
+
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

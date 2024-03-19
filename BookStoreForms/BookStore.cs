@@ -16,7 +16,9 @@ namespace BookStoreForms
             Books.Add(book1);
 
             Client client1 = new Client("Azra", "Barış", 768456, "123");
+            Client client2 = new Client("Barış", "Gültepe", 346, "123");
             Clients.Add(client1);
+            Clients.Add(client2);
         }
     }
 }

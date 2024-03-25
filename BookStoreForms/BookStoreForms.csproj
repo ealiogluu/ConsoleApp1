@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewBookSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewBookSystem.Designer.cs">
+      <DependentUpon>AddNewBookSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="BookStore.cs" />
     <Compile Include="Client.cs" />
@@ -64,6 +70,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserNameAndPassword.cs" />
+    <Compile Include="UserProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProcess.Designer.cs">
+      <DependentUpon>UserProcess.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNewBookSystem.resx">
+      <DependentUpon>AddNewBookSystem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +95,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserProcess.resx">
+      <DependentUpon>UserProcess.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

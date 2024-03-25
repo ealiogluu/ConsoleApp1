@@ -11,9 +11,10 @@ namespace BookStoreForms
         public string Name { get; set; }
         public string Writer { get; set; }
         public string Publisher { get; set; }
-        public int PageCount { get; set; }
+        public string PageCount { get; set; }
 
-        public Book(string name, string writer, string publisher, int pageCount)
+        public Book(){ }
+        public Book(string name, string writer, string publisher, string pageCount)
         {
             Name = name;
             Writer = writer;

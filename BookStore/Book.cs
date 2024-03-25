@@ -16,11 +16,12 @@ namespace BookStore
         public double Price { get; set; }
         public string Publisher { get; set; }
         public Book() { }
+
         public Book(string name, int pageCount, string writer, string category, double price, int categoryId, string publisher)
         {
             Name = name;
             PageCount = pageCount;
-            Writer = writer; 
+            Writer = writer;
             Category = category;
             Price = price;
             CategoryId = categoryId;

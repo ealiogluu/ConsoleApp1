@@ -88,7 +88,8 @@ namespace BookStoreForms
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start();
+            FormSignUp formSignUp = new FormSignUp();   
+            formSignUp.ShowDialog();
         }
     }
 }

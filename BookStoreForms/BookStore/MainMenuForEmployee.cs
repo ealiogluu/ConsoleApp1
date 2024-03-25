@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookStoreForms
 {
-    public partial class UserProcess : Form
+    public partial class MainMenuForEmployee : Form
     {
-        public UserProcess()
+        public MainMenuForEmployee()
         {
             InitializeComponent();
         }
@@ -22,13 +22,12 @@ namespace BookStoreForms
             AddNewBookSystem addNewBookSystem = new AddNewBookSystem();
             addNewBookSystem.ShowDialog();
 
-            UserProcess userProcess = new UserProcess();    
+            MainMenuForEmployee userProcess = new MainMenuForEmployee();    
             userProcess.ShowDialog();
         }
-
-        private void lblDisplayClients_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lblNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var client = new Client();
         }
     }
 }

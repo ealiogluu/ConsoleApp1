@@ -44,7 +44,7 @@
             this.LogInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LogInButton.ForeColor = System.Drawing.Color.Black;
             this.LogInButton.Location = new System.Drawing.Point(80, 194);
-            this.LogInButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LogInButton.Margin = new System.Windows.Forms.Padding(2);
             this.LogInButton.Name = "LogInButton";
             this.LogInButton.Size = new System.Drawing.Size(88, 45);
             this.LogInButton.TabIndex = 0;
@@ -57,7 +57,7 @@
             this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.userNameTextBox.ForeColor = System.Drawing.Color.Silver;
             this.userNameTextBox.Location = new System.Drawing.Point(56, 102);
-            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.userNameTextBox.Multiline = true;
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(144, 28);
@@ -71,7 +71,7 @@
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.Silver;
             this.passwordTextBox.Location = new System.Drawing.Point(56, 141);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextBox.Multiline = true;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(144, 28);
@@ -85,7 +85,7 @@
             this.ExitButton.BackgroundImage = global::BookStoreForms.Properties.Resources.çarpı;
             this.ExitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ExitButton.Location = new System.Drawing.Point(233, 0);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(2);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(28, 28);
             this.ExitButton.TabIndex = 4;
@@ -107,7 +107,7 @@
             // 
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Location = new System.Drawing.Point(58, 254);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(202, 68);
             this.panel1.TabIndex = 6;
@@ -137,7 +137,7 @@
             this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.LogInButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);

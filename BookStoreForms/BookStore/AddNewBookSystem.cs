@@ -20,7 +20,7 @@ namespace BookStoreForms
 
         private void exitAddNewBook_Click(object sender, EventArgs e)
         {
-            UserProcess userProcess = new UserProcess();
+            MainMenuForEmployee userProcess = new MainMenuForEmployee();
             userProcess.ShowDialog();
         }
 
@@ -42,7 +42,6 @@ namespace BookStoreForms
             book.PageCount = pageCount;
 
             BookStore.Books.Add(book);
-            removeBook.AllBooks.Items.Add(book);
        
         }
     }

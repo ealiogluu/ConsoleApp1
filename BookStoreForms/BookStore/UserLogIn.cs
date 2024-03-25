@@ -33,7 +33,7 @@ namespace BookStoreForms
                 {
                     if (password == client.Password)
                     {
-                        MessageBox.Show("log in successful.");
+                       
                         return;
                     }
                     else MessageBox.Show("Password is wrong.");

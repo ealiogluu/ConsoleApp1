@@ -19,8 +19,18 @@ namespace BookStoreForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserProcess userProcess = new UserProcess();    
+            MainMenuForEmployee userProcess = new MainMenuForEmployee();    
             userProcess.ShowDialog();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RemoveBook_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -11,10 +11,11 @@ namespace BookStoreForms
         public string Name { get; set; }
         public string UserName { get; set; }
         public string Adress { get; set; }
-        public double PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string Password { get; set; }
 
-        public Client(string name, string userName, string adress, double phoneNumber, string password)
+        public Client(){  }
+        public Client(string name, string userName, string adress, string phoneNumber, string password)
         {
             Name = name;
             UserName = userName;
@@ -22,7 +23,5 @@ namespace BookStoreForms
             PhoneNumber = phoneNumber;
             Password = password;
         }
-
-        
     }
 }

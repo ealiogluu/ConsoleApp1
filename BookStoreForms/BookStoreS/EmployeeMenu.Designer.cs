@@ -1,6 +1,6 @@
 ﻿namespace BookStoreForms
 {
-    partial class MainMenuForEmployee
+    partial class EmployeeMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -69,6 +69,7 @@
             this.lblRemoveBook.TabIndex = 2;
             this.lblRemoveBook.TabStop = true;
             this.lblRemoveBook.Text = "Remove book";
+            this.lblRemoveBook.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblRemoveBook_LinkClicked);
             // 
             // lblDisplayClients
             // 
@@ -126,7 +127,7 @@
             this.lblNewClient.Text = "Add new client";
             this.lblNewClient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblNewClient_LinkClicked);
             // 
-            // UserProcess
+            // EmployeeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,7 +141,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAddBook);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UserProcess";
+            this.Name = "EmployeeMenu";
             this.Text = "UserProcess";
             this.ResumeLayout(false);
             this.PerformLayout();

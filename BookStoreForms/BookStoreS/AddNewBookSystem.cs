@@ -20,7 +20,7 @@ namespace BookStoreForms
 
         private void exitAddNewBook_Click(object sender, EventArgs e)
         {
-            MainMenuForEmployee userProcess = new MainMenuForEmployee();
+            EmployeeMenu userProcess = new EmployeeMenu();
             userProcess.ShowDialog();
         }
 

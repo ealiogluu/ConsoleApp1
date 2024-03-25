@@ -19,7 +19,7 @@ namespace BookStoreForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainMenuForEmployee mainMenu = new MainMenuForEmployee();
+            EmployeeMenu mainMenu = new EmployeeMenu();
             mainMenu.ShowDialog(this);
         }
 
@@ -106,9 +106,9 @@ namespace BookStoreForms
 
         private void txtPassword_MouseLeave(object sender, EventArgs e)
         {
-            if (txtPassword.Text== null
+            if (txtPassword.Text== null)
             {
-                txtPassword.Text= "Password");
+                txtPassword.Text = "Password";
                 txtPassword.ForeColor = Color.Silver;
             }
         }

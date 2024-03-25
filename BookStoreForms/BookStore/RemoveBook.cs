@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace BookStoreForms
 {
-    public partial class UserProcess : Form
+    public partial class RemoveBook : Form
     {
-        public UserProcess()
+        public RemoveBook()
         {
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            UserProcess userProcess = new UserProcess();    
+            userProcess.ShowDialog();
         }
     }
 }

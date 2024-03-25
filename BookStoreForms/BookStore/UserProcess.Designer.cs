@@ -28,27 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddBook = new System.Windows.Forms.LinkLabel();
+            this.lblAddBook = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.RemoveBook = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.lblRemoveBook = new System.Windows.Forms.LinkLabel();
+            this.lblDisplayClients = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // AddBook
+            // lblAddBook
             // 
-            this.AddBook.AutoSize = true;
-            this.AddBook.LinkColor = System.Drawing.Color.Black;
-            this.AddBook.Location = new System.Drawing.Point(55, 88);
-            this.AddBook.Name = "AddBook";
-            this.AddBook.Size = new System.Drawing.Size(93, 16);
-            this.AddBook.TabIndex = 0;
-            this.AddBook.TabStop = true;
-            this.AddBook.Text = "Add new book";
-            this.AddBook.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lblAddBook.AutoSize = true;
+            this.lblAddBook.LinkColor = System.Drawing.Color.Black;
+            this.lblAddBook.Location = new System.Drawing.Point(55, 88);
+            this.lblAddBook.Name = "lblAddBook";
+            this.lblAddBook.Size = new System.Drawing.Size(93, 16);
+            this.lblAddBook.TabIndex = 0;
+            this.lblAddBook.TabStop = true;
+            this.lblAddBook.Text = "Add new book";
             // 
             // label1
             // 
@@ -60,26 +59,28 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Select that you want to do !";
             // 
-            // RemoveBook
+            // lblRemoveBook
             // 
-            this.RemoveBook.AutoSize = true;
-            this.RemoveBook.LinkColor = System.Drawing.Color.Black;
-            this.RemoveBook.Location = new System.Drawing.Point(55, 127);
-            this.RemoveBook.Name = "RemoveBook";
-            this.RemoveBook.Size = new System.Drawing.Size(93, 16);
-            this.RemoveBook.TabIndex = 2;
-            this.RemoveBook.TabStop = true;
-            this.RemoveBook.Text = "Remove book";
+            this.lblRemoveBook.AutoSize = true;
+            this.lblRemoveBook.LinkColor = System.Drawing.Color.Black;
+            this.lblRemoveBook.Location = new System.Drawing.Point(55, 127);
+            this.lblRemoveBook.Name = "lblRemoveBook";
+            this.lblRemoveBook.Size = new System.Drawing.Size(93, 16);
+            this.lblRemoveBook.TabIndex = 2;
+            this.lblRemoveBook.TabStop = true;
+            this.lblRemoveBook.Text = "Remove book";
             // 
-            // linkLabel3
+            // lblDisplayClients
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(55, 171);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(68, 16);
-            this.linkLabel3.TabIndex = 3;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "linkLabel3";
+            this.lblDisplayClients.AutoSize = true;
+            this.lblDisplayClients.LinkColor = System.Drawing.Color.Black;
+            this.lblDisplayClients.Location = new System.Drawing.Point(55, 171);
+            this.lblDisplayClients.Name = "lblDisplayClients";
+            this.lblDisplayClients.Size = new System.Drawing.Size(111, 16);
+            this.lblDisplayClients.TabIndex = 3;
+            this.lblDisplayClients.TabStop = true;
+            this.lblDisplayClients.Text = "Display all clients";
+            this.lblDisplayClients.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblDisplayClients_LinkClicked);
             // 
             // linkLabel4
             // 
@@ -125,15 +126,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 457);
+            this.ClientSize = new System.Drawing.Size(307, 409);
             this.Controls.Add(this.linkLabel7);
             this.Controls.Add(this.linkLabel6);
             this.Controls.Add(this.linkLabel5);
             this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.RemoveBook);
+            this.Controls.Add(this.lblDisplayClients);
+            this.Controls.Add(this.lblRemoveBook);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.AddBook);
+            this.Controls.Add(this.lblAddBook);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserProcess";
             this.Text = "UserProcess";
@@ -144,10 +145,10 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel AddBook;
+        private System.Windows.Forms.LinkLabel lblAddBook;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel RemoveBook;
-        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel lblRemoveBook;
+        private System.Windows.Forms.LinkLabel lblDisplayClients;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.LinkLabel linkLabel6;

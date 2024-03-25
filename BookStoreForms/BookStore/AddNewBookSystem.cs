@@ -26,7 +26,9 @@ namespace BookStoreForms
 
         private void bttnAdd_Click(object sender, EventArgs e)
         {
+            RemoveBook removeBook = new RemoveBook();   
             var book = new Book();
+
             string name = txtName.Text;
             book.Name = name;
 
@@ -40,6 +42,8 @@ namespace BookStoreForms
             book.PageCount = pageCount;
 
             BookStore.Books.Add(book);
+            removeBook.AllBooks.Items.Add(book);
+       
         }
     }
 }

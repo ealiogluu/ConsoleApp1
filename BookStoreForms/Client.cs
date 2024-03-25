@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreForms
 {
-    internal class Client
+    public class Client
     {
         public string Name { get; set; }
         public string UserName { get; set; }

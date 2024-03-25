@@ -59,7 +59,7 @@
       <DependentUpon>AddNewBookSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
-    <Compile Include="BookStore.cs" />
+    <Compile Include="BookStore2.cs" />
     <Compile Include="BookStoreS\UserLogIn.cs">
       <SubType>Form</SubType>
     </Compile>

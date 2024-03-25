@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -77,7 +78,6 @@ namespace BookStoreForms
             {
                 passwordTextBox.Text = "Password";
                 passwordTextBox.ForeColor = Color.Silver;
-
             }
         }
 
@@ -86,14 +86,9 @@ namespace BookStoreForms
             Application.Exit();
         }
 
-        private void userNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Process.Start();
         }
     }
 }

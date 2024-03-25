@@ -31,8 +31,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsListBox", "FormsListBo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreForms", "BookStoreForms\BookStoreForms.csproj", "{B82E4CE2-90ED-428B-B0BD-8CFE9DFB44B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaOtomasyonu", "PizzaOtomasyonu\PizzaOtomasyonu.csproj", "{310F2A63-A325-476E-9893-42751FA0BEAC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,10 +93,6 @@ Global
 		{B82E4CE2-90ED-428B-B0BD-8CFE9DFB44B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B82E4CE2-90ED-428B-B0BD-8CFE9DFB44B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B82E4CE2-90ED-428B-B0BD-8CFE9DFB44B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{310F2A63-A325-476E-9893-42751FA0BEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{310F2A63-A325-476E-9893-42751FA0BEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{310F2A63-A325-476E-9893-42751FA0BEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{310F2A63-A325-476E-9893-42751FA0BEAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

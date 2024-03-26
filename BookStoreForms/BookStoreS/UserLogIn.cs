@@ -17,20 +17,53 @@ namespace BookStoreForms.BookStore
             InitializeComponent();
         }
 
-
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
+            Close();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void userNameTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (userNameTextBox.Text == "User Name")
+            {
+                userNameTextBox.Text = null;
+                userNameTextBox.ForeColor = Color.Black;
+            }
+        }
+        private void userNameTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (userNameTextBox.Text == null)
+            {
+                userNameTextBox.Text = "User Name";
+                userNameTextBox.ForeColor = Color.Silver;
+            }
+        }
+        char? none = null;
+        private void passwordTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (passwordTextBox.Text == "User Name")
+            {
+                passwordTextBox.Text = null;
+                passwordTextBox.ForeColor = Color.Black;
+                passwordTextBox.PasswordChar = '*';
+            }
+        }
+        private void passwordTextBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (passwordTextBox.Text == null)
+            {
+                passwordTextBox.Text = "User Name";
+                passwordTextBox.ForeColor = Color.Silver;
+                passwordTextBox.PasswordChar = Convert.ToChar(none);
+            }
+        }
+        private void btnLogIn_Click(object sender, EventArgs e)
         {
             string userName = userNameTextBox.Text;
             string password = passwordTextBox.Text;
 
             //var store = new BookStore();
 
-            foreach (Client client in BookStore.Clients)
+            foreach (Client client in BookStore2.Clients)
             {
                 if (userName == client.Name)
                 {

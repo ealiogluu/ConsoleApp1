@@ -10,7 +10,7 @@ namespace BookStoreForms
 
 
         static BookStore2()
-        {
+        { 
             Book book1 = new Book("İnsan Ne ile Yaşar?", "Tolstoy", "Can Yayınları","89");
             Books.Add(book1);
 

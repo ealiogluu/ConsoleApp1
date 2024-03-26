@@ -44,7 +44,6 @@
             this.btnExit.Size = new System.Drawing.Size(28, 28);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblWelcome
             // 
@@ -58,19 +57,30 @@
             // 
             // userNameTextBox
             // 
+            this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.userNameTextBox.ForeColor = System.Drawing.Color.Silver;
             this.userNameTextBox.Location = new System.Drawing.Point(108, 88);
             this.userNameTextBox.Multiline = true;
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(142, 35);
             this.userNameTextBox.TabIndex = 6;
+            this.userNameTextBox.Text = "User Name";
+            this.userNameTextBox.MouseEnter += new System.EventHandler(this.userNameTextBox_MouseEnter);
+            this.userNameTextBox.MouseLeave += new System.EventHandler(this.userNameTextBox_MouseLeave);
             // 
             // passwordTextBox
             // 
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.passwordTextBox.ForeColor = System.Drawing.Color.Silver;
             this.passwordTextBox.Location = new System.Drawing.Point(108, 153);
             this.passwordTextBox.Multiline = true;
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(142, 35);
             this.passwordTextBox.TabIndex = 7;
+            this.passwordTextBox.Text = "Password";
+            this.passwordTextBox.MouseEnter += new System.EventHandler(this.passwordTextBox_MouseEnter);
+            this.passwordTextBox.MouseLeave += new System.EventHandler(this.passwordTextBox_MouseLeave);
             // 
             // btnLogIn
             // 
@@ -80,7 +90,7 @@
             this.btnLogIn.TabIndex = 8;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // UserLogIn
             // 

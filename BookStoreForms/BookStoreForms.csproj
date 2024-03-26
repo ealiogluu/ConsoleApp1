@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNewClient.cs">
+    <Compile Include="BookStoreS\AddNewClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewClient.Designer.cs">
+    <Compile Include="BookStoreS\AddNewClient.Designer.cs">
       <DependentUpon>AddNewClient.cs</DependentUpon>
     </Compile>
     <Compile Include="BookStoreS\AddNewBookSystem.cs">
@@ -99,7 +99,7 @@
     <Compile Include="BookStoreS\EmployeeMenu.Designer.cs">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddNewClient.resx">
+    <EmbeddedResource Include="BookStoreS\AddNewClient.resx">
       <DependentUpon>AddNewClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookStoreS\AddNewBookSystem.resx">

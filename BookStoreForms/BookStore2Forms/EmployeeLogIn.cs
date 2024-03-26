@@ -17,14 +17,9 @@ namespace BookStoreForms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit(); 
-        }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-
             string password = txtPassword.Text;
 
             if (password == "457")
@@ -35,9 +30,15 @@ namespace BookStoreForms
             else
             {
                 MessageBox.Show("Incorrect Entry");
+                Close();
                 EmployeeLogIn employeeLogIn = new EmployeeLogIn();
                 employeeLogIn.ShowDialog(this);
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

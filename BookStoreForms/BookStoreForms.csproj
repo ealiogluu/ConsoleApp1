@@ -46,78 +46,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookStoreS\AddNewClient.cs">
+    <Compile Include="BookStore2Forms\AddNewClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookStoreS\AddNewClient.Designer.cs">
+    <Compile Include="BookStore2Forms\AddNewClient.Designer.cs">
       <DependentUpon>AddNewClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookStoreS\AddNewBookSystem.cs">
+    <Compile Include="BookStore2Forms\AddNewBookSystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookStoreS\AddNewBookSystem.Designer.cs">
+    <Compile Include="BookStore2Forms\AddNewBookSystem.Designer.cs">
       <DependentUpon>AddNewBookSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="BookStore2.cs" />
-    <Compile Include="BookStoreS\UserLogIn.cs">
+    <Compile Include="BookStore2Forms\UserLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookStoreS\UserLogIn.Designer.cs">
+    <Compile Include="BookStore2Forms\UserLogIn.Designer.cs">
       <DependentUpon>UserLogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
-    <Compile Include="BookStoreS\MainMenu.cs">
+    <Compile Include="BookStore2Forms\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookStoreS\MainMenu.Designer.cs">
+    <Compile Include="BookStore2Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookStoreS\RemoveBook.cs">
+    <Compile Include="BookStore2Forms\RemoveBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookStoreS\RemoveBook.Designer.cs">
+    <Compile Include="BookStore2Forms\RemoveBook.Designer.cs">
       <DependentUpon>RemoveBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookStoreS\SignUpForm.cs">
+    <Compile Include="BookStore2Forms\SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookStoreS\SignUpForm.Designer.cs">
+    <Compile Include="BookStore2Forms\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeLogIn.cs">
+    <Compile Include="BookStore2Forms\EmployeeLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeLogIn.Designer.cs">
+    <Compile Include="BookStore2Forms\EmployeeLogIn.Designer.cs">
       <DependentUpon>EmployeeLogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BookStoreS\EmployeeMenu.cs">
+    <Compile Include="BookStore2Forms\EmployeeMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookStoreS\EmployeeMenu.Designer.cs">
+    <Compile Include="BookStore2Forms\EmployeeMenu.Designer.cs">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookStoreS\AddNewClient.resx">
+    <EmbeddedResource Include="BookStore2Forms\AddNewClient.resx">
       <DependentUpon>AddNewClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookStoreS\AddNewBookSystem.resx">
+    <EmbeddedResource Include="BookStore2Forms\AddNewBookSystem.resx">
       <DependentUpon>AddNewBookSystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookStoreS\MainMenu.resx">
+    <EmbeddedResource Include="BookStore2Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookStoreS\UserLogIn.resx">
+    <EmbeddedResource Include="BookStore2Forms\UserLogIn.resx">
       <DependentUpon>UserLogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookStoreS\RemoveBook.resx">
+    <EmbeddedResource Include="BookStore2Forms\RemoveBook.resx">
       <DependentUpon>RemoveBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookStoreS\SignUpForm.resx">
+    <EmbeddedResource Include="BookStore2Forms\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeLogIn.resx">
+    <EmbeddedResource Include="BookStore2Forms\EmployeeLogIn.resx">
       <DependentUpon>EmployeeLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -130,7 +130,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="BookStoreS\EmployeeMenu.resx">
+    <EmbeddedResource Include="BookStore2Forms\EmployeeMenu.resx">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -148,9 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\çarpı.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\çarpı1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

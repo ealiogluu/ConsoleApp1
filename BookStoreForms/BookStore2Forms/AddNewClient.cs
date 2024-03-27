@@ -116,6 +116,7 @@ namespace BookStoreForms
             client.Password = password; 
 
             BookStore2.Clients.Add(client);
+            MessageBox.Show("Client is added !");
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

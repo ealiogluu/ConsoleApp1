@@ -1,4 +1,5 @@
 ﻿using BookStoreForms.BookStore;
+using BookStoreForms.UserForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,9 @@ namespace BookStoreForms
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-          
+            Main main = new Main();
+            //main.lblAccount.Text =
+            main.ShowDialog();
         }
 
 

@@ -23,5 +23,8 @@ namespace BookStoreForms
             PhoneNumber = phoneNumber;
             Password = password;
         }
+
+        Basket1 Basket1 = new Basket1();    
+
     }
 }

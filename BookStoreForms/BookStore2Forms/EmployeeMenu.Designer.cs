@@ -49,7 +49,7 @@
             this.lblAddBook.TabIndex = 0;
             this.lblAddBook.TabStop = true;
             this.lblAddBook.Text = "Add new book";
-            this.lblAddBook.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAddBook_LinkClicked_1);
+            this.lblAddBook.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAddBook_LinkClicked);
             // 
             // label1
             // 

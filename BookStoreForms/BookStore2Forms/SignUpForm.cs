@@ -89,6 +89,29 @@ namespace BookStoreForms
                 txtPassword.PasswordChar = Convert.ToChar(nothing);
             }
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            var client = new Client();
+
+            string name = txtName.Text;
+            name = client.Name;
+
+            string userName = txtUserName.Text;
+            userName = client.UserName;
+
+            string adress= txtAdress.Text;
+            adress = client.Adress;
+
+            string phoneNumber = txtPhoneNumber.Text;
+            phoneNumber = client.PhoneNumber;  
+            
+            string password = txtPhoneNumber.Text;
+            password = client.Password;
+
+            BookStore2.Clients.Add(client);
+            MessageBox.Show("Registration successful.");
+        }
     }
 }
 

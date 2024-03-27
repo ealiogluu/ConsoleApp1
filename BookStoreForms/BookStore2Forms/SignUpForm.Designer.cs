@@ -32,7 +32,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtAdress = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.exitSignUp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,17 +95,18 @@
             this.txtAdress.TabIndex = 3;
             this.txtAdress.Text = "Adress";
             // 
-            // button1
+            // btnSignUp
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(137, 316);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 48);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Sign Up";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSignUp.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSignUp.Location = new System.Drawing.Point(137, 316);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(82, 48);
+            this.btnSignUp.TabIndex = 4;
+            this.btnSignUp.Text = "Sign Up";
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // txtName
             // 
@@ -150,7 +151,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.exitSignUp);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.txtAdress);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.txtPassword);
@@ -171,7 +172,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtAdress;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button exitSignUp;
         private System.Windows.Forms.Label label2;

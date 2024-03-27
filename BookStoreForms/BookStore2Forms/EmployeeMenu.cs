@@ -17,27 +17,19 @@ namespace BookStoreForms
             InitializeComponent();
         }
 
-        private void lblAddBook_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AddNewBookSystem addNewBookSystem = new AddNewBookSystem();
-            addNewBookSystem.ShowDialog();
-
-            EmployeeMenu userProcess = new EmployeeMenu();    
-            userProcess.ShowDialog();
-        }
         private void lblNewClient_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var client = new Client();
-        }
-
-        private void lblAddBook_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AddNewBookSystem addNewBookSystem = new AddNewBookSystem();
-            addNewBookSystem.ShowDialog();
+            AddNewClient addNewClient = new AddNewClient();
+            addNewClient.ShowDialog();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void lblAddBook_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddNewBookSystem add = new AddNewBookSystem();
+            add.ShowDialog();
         }
     }
 }

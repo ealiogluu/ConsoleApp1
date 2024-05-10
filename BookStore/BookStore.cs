@@ -136,7 +136,7 @@ namespace BookStore
         {
             try
             {
-                if (choose == "1")       AddNewBook();
+                if      (choose == "1")  AddNewBook();
                 else if (choose == "2")  RemoveBook();
                 else if (choose == "3")  SearchBook();
               //else if (choose == "4") 
@@ -167,7 +167,7 @@ namespace BookStore
 
             Console.Write("Book Name: ");
             book.Name = Console.ReadLine();
-
+           
             Console.Write("Writer: ");
             book.Writer = Console.ReadLine();
 

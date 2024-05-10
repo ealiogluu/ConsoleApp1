@@ -127,7 +127,7 @@ namespace BookStore
             {
                 IBookPriceFilter filter = null;
 
-                if (choose == 1) filter = new BookPriceFilter0_100();
+                if      (choose == 1) filter = new BookPriceFilter0_100();
                 else if (choose == 2) filter = new BookPriceFilter100_200();
                 else if (choose == 3) filter = new BookPriceFilter200_500();
                 else if (choose == 4) filter = new BookPriceFilter500Plus();
@@ -204,7 +204,7 @@ namespace BookStore
         {
             IGenresFilter filter = null;
 
-            if (choose == 1) filter = new GenresFilterNovels();
+            if    (choose == 1) filter = new GenresFilterNovels();
             else if (choose == 2) filter = new GenresFilterPoem();
             else if (choose == 3) filter = new GenresFilterStories();
 

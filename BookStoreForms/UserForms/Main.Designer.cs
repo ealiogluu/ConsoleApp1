@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblBookStore = new System.Windows.Forms.Label();
             this.listBooks = new System.Windows.Forms.ListBox();
@@ -43,8 +44,11 @@
             this.chkNovel = new System.Windows.Forms.CheckBox();
             this.chkPoem = new System.Windows.Forms.CheckBox();
             this.chkStory = new System.Windows.Forms.CheckBox();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Basket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
@@ -58,6 +62,7 @@
             this.txtSearch.Size = new System.Drawing.Size(616, 47);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "g";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblBookStore
             // 
@@ -79,6 +84,7 @@
             this.listBooks.Name = "listBooks";
             this.listBooks.Size = new System.Drawing.Size(519, 452);
             this.listBooks.TabIndex = 3;
+            this.listBooks.SelectedIndexChanged += new System.EventHandler(this.listBooks_SelectedIndexChanged);
             // 
             // btnLogIn
             // 
@@ -199,7 +205,7 @@
             // 
             this.chkNovel.AutoSize = true;
             this.chkNovel.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNovel.Location = new System.Drawing.Point(25, 241);
+            this.chkNovel.Location = new System.Drawing.Point(28, 240);
             this.chkNovel.Margin = new System.Windows.Forms.Padding(4);
             this.chkNovel.Name = "chkNovel";
             this.chkNovel.Size = new System.Drawing.Size(66, 22);
@@ -231,11 +237,27 @@
             this.chkStory.Text = "Story";
             this.chkStory.UseVisualStyleBackColor = true;
             // 
+            // ımageList1
+            // 
+            this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ımageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(931, 294);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1613, 780);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.chkStory);
             this.Controls.Add(this.chkPoem);
             this.Controls.Add(this.chkNovel);
@@ -257,6 +279,7 @@
             this.Text = "DisplayAllBooks";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Basket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +302,7 @@
         private System.Windows.Forms.CheckBox chkNovel;
         private System.Windows.Forms.CheckBox chkPoem;
         private System.Windows.Forms.CheckBox chkStory;
+        private System.Windows.Forms.ImageList ımageList1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

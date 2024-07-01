@@ -11,7 +11,8 @@ using System.Xml.Linq;
 
 namespace BookStore
 {
-    internal class Customer
+  
+   internal class Customer
     {
         public Customer(){ }
         public string Name { get; set; }

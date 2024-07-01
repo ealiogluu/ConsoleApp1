@@ -8,13 +8,12 @@ namespace Interkod.BookStore.Models
 {
     class OrderItem
     {
-        public Order Order { get; set; }
-        public string  Book { get; set; }
+        public Book Book { get; set; }
         public int Quantity { get; set; }
 
-        public OrderItem(string book, int quantity)
+        public OrderItem(Book book, int quantity)
         {
-            Order = new Order();
+            
             Book = book;
             Quantity = quantity;
              

@@ -8,7 +8,9 @@ namespace Interkod.BookStore.Models
 {
     class BookStore
     {
-        public static List<Book>Books = new List<Book>();
+        public static List<Book> Books = new List<Book>();
+
+        public static List<Book> Orders = new List<Book>();   
 
         public BookStore()
         {

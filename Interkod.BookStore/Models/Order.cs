@@ -8,21 +8,49 @@ namespace Interkod.BookStore.Models
 {
     class Order
     {
-        public static List<Order> Orders = new List<Order>();
+        public static List<OrderItem> OrderItems = new List<OrderItem>();
         public int OrderNumber { get; set; }
         public Customer Customer { get; set; }
-        public Basket Basket { get; set; }
 
         public Order()
         {
-            Basket = new Basket();
             Customer = new Customer();
         }
 
-        public Order(int orderNumber)
+        public void AddOrderItem (OrderItem orderNumber)
         {
-            OrderNumber = orderNumber;
-            Basket = new Basket();
+           
+        }
+
+        public void AddOrderBook()
+        {
+            Console.WriteLine("Add book.");
+
+            string name = Console.ReadLine();
+
+            foreach (var book in BookStore.Books)
+            {
+                if (book.Name == name)
+                {
+                    BookStore.Orders.Add(book);
+                }
+
+            }
+        }
+
+
+        public void RemoveOrderBook()
+        {
+            Console.WriteLine("please enter the name of the book correctly.");
+
+            string name = Console.ReadLine();
+
+            foreach(var book in BookStore.Orders)
+            {
+                if (book.Name == name) BookStore.Orders.Remove(book);
+            }
+         
+
         }
     }
 }

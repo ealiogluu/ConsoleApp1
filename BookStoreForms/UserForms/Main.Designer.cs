@@ -52,12 +52,12 @@
             this.txtSearch.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Silver;
             this.txtSearch.Location = new System.Drawing.Point(404, 47);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(616, 47);
             this.txtSearch.TabIndex = 0;
-            this.txtSearch.Text = "Search Book...";
+            this.txtSearch.Text = "g";
             // 
             // lblBookStore
             // 
@@ -75,7 +75,7 @@
             this.listBooks.FormattingEnabled = true;
             this.listBooks.ItemHeight = 16;
             this.listBooks.Location = new System.Drawing.Point(159, 194);
-            this.listBooks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBooks.Margin = new System.Windows.Forms.Padding(4);
             this.listBooks.Name = "listBooks";
             this.listBooks.Size = new System.Drawing.Size(519, 452);
             this.listBooks.TabIndex = 3;
@@ -86,7 +86,7 @@
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogIn.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.Location = new System.Drawing.Point(1177, 16);
-            this.btnLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(133, 62);
             this.btnLogIn.TabIndex = 4;
@@ -100,7 +100,7 @@
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.Location = new System.Drawing.Point(1319, 16);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(133, 62);
             this.btnSignUp.TabIndex = 5;
@@ -113,7 +113,7 @@
             this.txtBasket.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBasket.ForeColor = System.Drawing.Color.Silver;
             this.txtBasket.Location = new System.Drawing.Point(1507, 274);
-            this.txtBasket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBasket.Margin = new System.Windows.Forms.Padding(4);
             this.txtBasket.Multiline = true;
             this.txtBasket.Name = "txtBasket";
             this.txtBasket.Size = new System.Drawing.Size(81, 19);
@@ -152,7 +152,7 @@
             this.pictureBox1.BackgroundImage = global::BookStoreForms.Properties.Resources.indir;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(1507, 68);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(81, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,7 +164,7 @@
             this.Basket.BackgroundImage = global::BookStoreForms.Properties.Resources.basket;
             this.Basket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Basket.Location = new System.Drawing.Point(1507, 203);
-            this.Basket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Basket.Margin = new System.Windows.Forms.Padding(4);
             this.Basket.Name = "Basket";
             this.Basket.Size = new System.Drawing.Size(81, 59);
             this.Basket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -177,7 +177,7 @@
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Location = new System.Drawing.Point(1571, 2);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(40, 37);
             this.btnExit.TabIndex = 6;
@@ -188,7 +188,7 @@
             this.btnSearch.BackgroundImage = global::BookStoreForms.Properties.Resources.images__1_;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Location = new System.Drawing.Point(1029, 47);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(52, 48);
             this.btnSearch.TabIndex = 2;
@@ -200,7 +200,7 @@
             this.chkNovel.AutoSize = true;
             this.chkNovel.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkNovel.Location = new System.Drawing.Point(25, 241);
-            this.chkNovel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkNovel.Margin = new System.Windows.Forms.Padding(4);
             this.chkNovel.Name = "chkNovel";
             this.chkNovel.Size = new System.Drawing.Size(66, 22);
             this.chkNovel.TabIndex = 19;
@@ -212,7 +212,7 @@
             this.chkPoem.AutoSize = true;
             this.chkPoem.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPoem.Location = new System.Drawing.Point(25, 276);
-            this.chkPoem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkPoem.Margin = new System.Windows.Forms.Padding(4);
             this.chkPoem.Name = "chkPoem";
             this.chkPoem.Size = new System.Drawing.Size(65, 22);
             this.chkPoem.TabIndex = 20;
@@ -224,7 +224,7 @@
             this.chkStory.AutoSize = true;
             this.chkStory.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkStory.Location = new System.Drawing.Point(25, 315);
-            this.chkStory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkStory.Margin = new System.Windows.Forms.Padding(4);
             this.chkStory.Name = "chkStory";
             this.chkStory.Size = new System.Drawing.Size(66, 22);
             this.chkStory.TabIndex = 21;
@@ -252,7 +252,7 @@
             this.Controls.Add(this.lblBookStore);
             this.Controls.Add(this.txtSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "DisplayAllBooks";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

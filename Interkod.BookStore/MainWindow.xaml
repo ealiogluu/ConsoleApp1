@@ -7,16 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListView ItemsSource="{Binding OrderList, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" DisplayMemberPath="Book.Name" SelectedItem="{Binding SelectedOrder,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
-        </ListView>
-            <!--<ListView.ItemTemplate>
+        <ListView ItemsSource="{Binding BookStore.Books, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedItem="{Binding SelectedOrder,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Book}" />
-                        <TextBlock Text="{Binding Quantity}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Author}" />
                     </StackPanel>
                 </DataTemplate>
-            </ListView.ItemTemplate>-->
+            </ListView.ItemTemplate>
+        </ListView>
         <Button Width="50" Height="50" Content="-" />
     </Grid>
 </Window>

@@ -6,28 +6,22 @@ using System.Threading.Tasks;
 
 namespace Interkod.BookStore.Models
 {
-    class Customer
+    public class Customer
     {
         public string Name { get; set; } 
-        public int CustomerId { get; set; }
-
-
-        public void DisplayAllBooks()
+        public string UserName { get; set; }
+        public int Password { get; set; }
+        public string Address { get; set; }
+        public long PhoneNumber { get; set; }
+        public Customer(string userName, int password, string name, string adress, long phoneNumber )
         {
-            Console.WriteLine("\t\tAll Books");
-            Console.WriteLine("------------------------------------------------");
-            Console.WriteLine("Book Name   |   Page Count   |   Book Price");
-            Console.WriteLine("------------------------------------------------\n");
-
-            foreach (var book in BookStore.Books)
-            {
-                Console.WriteLine(book.Name + "\t\t" + book.PageCount + "\t\t" + book.Price);
-
-            }
-            Console.WriteLine("------------------------------------------------");
-            Console.WriteLine();
+            UserName = userName;
+            Password = password;
+            Name = name;
+            Address = adress;
+            PhoneNumber = phoneNumber;
+                
         }
-
-       
+        public Customer() { }
     }
 }

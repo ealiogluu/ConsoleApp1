@@ -31,7 +31,7 @@ namespace BookStore
             Book book8 = new Book("Hikaye", 67, "Halit Ziya Uşaklıgil", "Story", 70, 3, "İş Bankası Yayınları");
             Book book9 = new Book("Hikayeden Hatıraya", 34, "Hüseyin Hüsnü Yazıcı", "Story", 50, 3, "Yapı Kredi Yayınları");
 
-            Books.Add(book1);
+            Books.Add(new Book("Yaban", 123, "Yakup Kadri Karaosmanoğlu", "Novel", 123, 1, "Can Yayınları"));
             Books.Add(book2);
             Books.Add(book3);
             Books.Add(book4);

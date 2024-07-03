@@ -6,17 +6,24 @@ using System.Threading.Tasks;
 
 namespace Interkod.BookStore.Models
 {
-    class OrderItem
+    public class OrderItem
     {
+        public int Id { get; set; }
         public Book Book { get; set; }
         public int Quantity { get; set; }
-
-        public OrderItem(Book book, int quantity)
+        public OrderItem()
+        {
+            
+        }
+        public OrderItem(Book book, int quantity, int id)
         {
             
             Book = book;
             Quantity = quantity;
+            Id = id;
              
         }
+
+
     }
 }

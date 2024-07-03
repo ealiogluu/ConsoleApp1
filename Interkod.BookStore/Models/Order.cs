@@ -1,56 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Interkod.BookStore.Models
 {
-    class Order
+    public class Order
     {
-        public static List<OrderItem> OrderItems = new List<OrderItem>();
+        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
         public int OrderNumber { get; set; }
         public Customer Customer { get; set; }
+        public Order(){}
 
-        public Order()
+        public Order(List<OrderItem> orderItem, int orderNumber, Customer customer)
         {
-            Customer = new Customer();
+            OrderItems = orderItem;
+            OrderNumber = orderNumber;
+            Customer = customer;
         }
 
-        public void AddOrderItem (OrderItem orderNumber)
-        {
-           
-        }
+        //public void AddNewBookOrder(string bookName)
+        //{
+        //    foreach (var book in BookStore.Books)
+        //        if (bookName == book.Name) BookStore.Orders.Add(book);
 
-        public void AddOrderBook()
-        {
-            Console.WriteLine("Add book.");
+        //}
+        //public void RemoveBookOrder(string bookName)
+        //{
+        //    foreach (var book in BookStore.Orders)
+        //    {
+        //        if (bookName == book.Name)
+        //        {
+        //            BookStore.Orders.Remove(book);
+        //        }
+        //    }
+        //}
 
-            string name = Console.ReadLine();
+        //public void AddOrderItem(Book book, int quantity)
+        //{
+        //    foreach (Book b in BookStore.Books)
+        //        if (book == b)  OrderItems.Add(new OrderItem(book, quantity, OrderItems.Count));
+        //}
 
-            foreach (var book in BookStore.Books)
-            {
-                if (book.Name == name)
-                {
-                    BookStore.Orders.Add(book);
-                }
-
-            }
-        }
-
-
-        public void RemoveOrderBook()
-        {
-            Console.WriteLine("please enter the name of the book correctly.");
-
-            string name = Console.ReadLine();
-
-            foreach(var book in BookStore.Orders)
-            {
-                if (book.Name == name) BookStore.Orders.Remove(book);
-            }
-         
-
-        }
+        //public void RemoveOrderItem(int id)
+        //{
+        //    foreach (var b in OrderItems)
+        //    {
+        //        if (b.Id == id) b.Quantity--;
+        //    }
+        //}
     }
 }

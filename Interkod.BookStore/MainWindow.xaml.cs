@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Interkod.BookStore.Models;
+using Interkod.BookStore.ViewModel;
+using System.Collections.ObjectModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +19,14 @@ namespace Interkod.BookStore
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MainWindoViewModel VM { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            VM = new MainWindoViewModel();
+            DataContext = VM;
         }
+
     }
 }

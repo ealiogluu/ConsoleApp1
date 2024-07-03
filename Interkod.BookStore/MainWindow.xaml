@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <ListView ItemsSource="{Binding OrderList, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" DisplayMemberPath="Book.Name" SelectedItem="{Binding SelectedOrder,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+        </ListView>
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Book}" />
+                        <TextBlock Text="{Binding Quantity}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+        <Button Width="50" Height="50" Content="-" />
     </Grid>
 </Window>

@@ -16,16 +16,27 @@ namespace DenemeWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool running = false;
         public MainWindow()
         {
             InitializeComponent();
 
-            tbNew.Text = "AY";
 
         }
 
-        private void girişButonu_Click(object sender, RoutedEventArgs e)
+        private void toggleButon_Click(object sender, RoutedEventArgs e)
         {
+            if (running) 
+            {
+                lbstatus.Text = "Stopped.";
+                toggleButon.Content = "Run";
+            }
+            else
+            {
+                lbstatus.Text = "Runned";
+                toggleButon.Content = "Stop";
+            }
+            running =! running;
 
         }
     }

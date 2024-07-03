@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock Name="tbNew" FontSize="78" VerticalAlignment= "Top" HorizontalAlignment="Center" />
-        <Button Name="girişButonu"  Width="200" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Content="giriş"
-                FontSize="40" Click="girişButonu_Click" />
+        <TextBlock Name="lbstatus" FontSize="78" VerticalAlignment= "Top" HorizontalAlignment="Center" />
+        <Button Name="toggleButon"  Width="200" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Content="giriş"
+                FontSize="40" Click="toggleButon_Click" />
 
     </Grid>
 </Window>

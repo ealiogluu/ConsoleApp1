@@ -34,7 +34,7 @@ namespace Interkod.BookStore.ViewModel
 
             AddNewBooKToSystem("a", "a", 67, 78, 1);
             ReducesBookCount("a");
-            SearchBook("s");    
+            SearchBook("z");    
         }
 
         //ORDERS
@@ -72,7 +72,7 @@ namespace Interkod.BookStore.ViewModel
         //{
         //    Button button = new Button();
 
-        
+
         //}
 
 
@@ -112,6 +112,7 @@ namespace Interkod.BookStore.ViewModel
             MessageBox.Show("Registrated is successful! Welcome :)");
         }
 
+        // (works)
         public void SearchBook(string name)
         {
             foreach (var book in BookStore.Books)
@@ -122,8 +123,10 @@ namespace Interkod.BookStore.ViewModel
                     return;
                 }
             }
-            
+            MessageBox.Show("The book is not available.");
         }
+
+
         // EMPLOYEE
         //*********
 

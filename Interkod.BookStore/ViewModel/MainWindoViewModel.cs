@@ -2,6 +2,7 @@
 
 using Interkod.BookStore.Models;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Interkod.BookStore.ViewModel
 {
@@ -22,24 +23,33 @@ namespace Interkod.BookStore.ViewModel
             BookStore.Books.Add(book4);
 
             Customer customer = new Customer("ayse", 1, "ayse", "baris", 67583456);
+            Customer customer2 = new Customer("burcu", 2, "burcu", "kurtkoy", 43756);
             BookStore.Customers.Add(customer);
+            BookStore.Customers.Add(customer2); 
+
             Book book2 = new Book("bir", "iki", 3,90, 4);
             BookStore.Books.Add(book2);
             AddOrderItem(book2, 4);
-            RemoveOrderItem(Order.OrderItems.Count);
+            AddOrderItem(book4 , 5);
+
+            AddNewBooKToSystem("a", "a", 67, 78, 1);
+            ReducesBookCount("a");
+            SearchBook("s");    
         }
 
         //ORDERS
         //******
 
-        // Add new book to order
+        // Add new book to order (works)
         public void AddOrderItem(Book book, int quantity)
         {
             foreach (Book b in BookStore.Books)
+            {
                 if (book.Name == b.Name) Order.OrderItems.Add(new OrderItem(book, quantity, Order.OrderItems.Count));
+}
         }
 
-        // Reduces book count
+        // Reduces book count (works)
         public void ReduceOrderItem(int id)
         {
             foreach (var book in Order.OrderItems)
@@ -50,7 +60,7 @@ namespace Interkod.BookStore.ViewModel
 
         }
 
-        //Remove book from order
+        //Remove book from order (works)
         public void RemoveOrderItem(int id)
         {
             foreach (var book in Order.OrderItems)
@@ -58,10 +68,18 @@ namespace Interkod.BookStore.ViewModel
 
         }
 
+        //public void CheckOut()
+        //{
+        //    Button button = new Button();
+
+        
+        //}
+
 
         //CUSTOMER
         //********
 
+        // (works)
         public void LogIn(string userName, int password)
         {
             foreach (var customer in BookStore.Customers)
@@ -69,21 +87,16 @@ namespace Interkod.BookStore.ViewModel
                 if (userName.Equals(customer.UserName))
                 {
                     if (password.Equals(customer.Password))
-                        Console.WriteLine("Log ın Successful.");
-                    else
-                    {
-                        MessageBox.Show("Please try again.");
-                        LogIn(userName, password);
-                    }
+                        MessageBox.Show("Log in successful.");
+
+                    else MessageBox.Show("Please try again.");
+
                 }
-                else
-                {
-                    MessageBox.Show("Please try again.");
-                    LogIn(userName, password);
-                }
+                else MessageBox.Show("Please try again.");
             }
         }
 
+        // (works)
         public void SignUp(string name, string adress, string userName, long phoneNumber, int password)
         {
             var customer = new Customer();
@@ -99,11 +112,22 @@ namespace Interkod.BookStore.ViewModel
             MessageBox.Show("Registrated is successful! Welcome :)");
         }
 
-
+        public void SearchBook(string name)
+        {
+            foreach (var book in BookStore.Books)
+            {
+                if (book.Name.Equals(name))
+                {
+                    MessageBox.Show("The book that you are looking at available. Piece: " + book.BookCount);
+                    return;
+                }
+            }
+            
+        }
         // EMPLOYEE
         //*********
 
-        // Registration new book to sytem
+        // Registration new book to sytem (works)
         public void AddNewBooKToSystem(string name, string author, int pageCount, double bookCount, double price)
         {
             var book = new Book();
@@ -118,7 +142,7 @@ namespace Interkod.BookStore.ViewModel
             MessageBox.Show("Book registration successful.");
         }
         
-        //Reduces Book count From System
+        //Reduces Book count From System (works)
         public void ReducesBookCount(string bookName)
         {
             foreach (var book in BookStore.Books)
@@ -128,11 +152,13 @@ namespace Interkod.BookStore.ViewModel
             }
         }
 
-        // Remove book from system
+        // Remove book from system (works)
         public void RemoveBookFromSystem(string bookName)
         {
             foreach (var book in BookStore.Books)
                 if (book.Name.Equals(bookName)) BookStore.Books.Remove(book);
         }
+
+
     }
 }

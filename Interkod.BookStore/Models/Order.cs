@@ -19,35 +19,5 @@ namespace Interkod.BookStore.Models
             Customer = customer;
         }
 
-        //public void AddNewBookOrder(string bookName)
-        //{
-        //    foreach (var book in BookStore.Books)
-        //        if (bookName == book.Name) BookStore.Orders.Add(book);
-
-        //}
-        //public void RemoveBookOrder(string bookName)
-        //{
-        //    foreach (var book in BookStore.Orders)
-        //    {
-        //        if (bookName == book.Name)
-        //        {
-        //            BookStore.Orders.Remove(book);
-        //        }
-        //    }
-        //}
-
-        //public void AddOrderItem(Book book, int quantity)
-        //{
-        //    foreach (Book b in BookStore.Books)
-        //        if (book == b)  OrderItems.Add(new OrderItem(book, quantity, OrderItems.Count));
-        //}
-
-        //public void RemoveOrderItem(int id)
-        //{
-        //    foreach (var b in OrderItems)
-        //    {
-        //        if (b.Id == id) b.Quantity--;
-        //    }
-        //}
     }
 }

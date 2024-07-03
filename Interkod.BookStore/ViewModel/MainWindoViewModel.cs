@@ -1,11 +1,13 @@
 ﻿using Interkod.BookStore.Models;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Interkod.BookStore.ViewModel;
 
 public class MainWindoViewModel
 {
     public Order Order { get; set; } = new Order();
+    public List<OrderItem> Basket { get; set; }
     public BookStore1 BookStore { get; set; } = new BookStore1();
 
     public MainWindoViewModel()
@@ -24,12 +26,23 @@ public class MainWindoViewModel
         BookStore.Customers.Add(customer2); 
     }
 
+    private void applyOrder()
+    {
+        Random rnd = new Random();
+        var order = new Order();
+
+        order.OrderItems = Basket;
+        order.OrderNumber = rnd.Next();
+        MessageBox.Show($"Order {order.OrderNumber} created.");
+
+    }
+
     // Add new book to order (works)
-    public void AddOrderItem(Book book, int quantity)
+    public void AddItemToBasket(Book book, int quantity)
     {
         foreach (Book b in BookStore.Books)
         {
-            if (book.Name == b.Name) Order.OrderItems.Add(new OrderItem(book, quantity, Order.OrderItems.Count));
+            if (book.Name == b.Name) Basket.Add(new OrderItem(book, quantity, Order.OrderItems.Count));
 }
     }
 
@@ -51,12 +64,12 @@ public class MainWindoViewModel
 
     }
 
-    //public void CheckOut()
-    //{
-    //    Button button = new Button();
+    public void CheckOut()
+    {
+        Button button = new Button();
 
 
-    //}
+    }
 
 
     //CUSTOMER

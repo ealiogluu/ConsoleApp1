@@ -8,22 +8,24 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="0,0,0,-34">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="78"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" HorizontalAlignment="Left" Width="800">
+        <Grid Grid.Row="1" HorizontalAlignment="Left" Width="800">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="120*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="180*"/>
             </Grid.ColumnDefinitions>
 
             <Rectangle Grid.Column="0" Fill="Black" />
             <Rectangle Grid.Column="2" Fill="Purple" />
         </Grid>
 
-        <Rectangle Grid.Row="1" Fill="DarkGray" />
+        <Rectangle Grid.Row="0" Fill="DarkBlue"/>
+        <Rectangle Grid.Row="2" Fill="DarkSeaGreen" />
     </Grid>
 </Window>

@@ -6,10 +6,24 @@
         xmlns:local="clr-namespace:DenemeWpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock Name="lbstatus" FontSize="78" VerticalAlignment= "Top" HorizontalAlignment="Center" />
-        <Button Name="toggleButon"  Width="200" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Content="giriş"
-                FontSize="40" Click="toggleButon_Click" />
+    <Grid Margin="0,0,0,-34">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="78"/>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0" HorizontalAlignment="Left" Width="800">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Column="0" Fill="Black" />
+            <Rectangle Grid.Column="2" Fill="Purple" />
+        </Grid>
+
+        <Rectangle Grid.Row="1" Fill="DarkGray" />
     </Grid>
 </Window>

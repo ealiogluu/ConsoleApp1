@@ -24,20 +24,6 @@ namespace DenemeWpf
 
         }
 
-        private void toggleButon_Click(object sender, RoutedEventArgs e)
-        {
-            if (running) 
-            {
-                lbstatus.Text = "Stopped.";
-                toggleButon.Content = "Run";
-            }
-            else
-            {
-                lbstatus.Text = "Runned";
-                toggleButon.Content = "Stop";
-            }
-            running =! running;
-
-        }
+      
     }
 }

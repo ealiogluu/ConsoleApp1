@@ -66,57 +66,6 @@ public class MainViewModel
 
     }
 
-    //CUSTOMER
-    //********
-
-    // (works)
-    public void LogIn(string userName, int password)
-    {
-        foreach (var customer in BookStore.Customers)
-        {
-            if (userName.Equals(customer.UserName))
-            {
-                if (password.Equals(customer.Password))
-                    MessageBox.Show("Log in successful.");
-
-                else MessageBox.Show("Please try again.");
-
-            }
-            else MessageBox.Show("Please try again.");
-        }
-    }
-
-    // (works)
-    public void SignUp(string name, string adress, string userName, long phoneNumber, int password)
-    {
-        var customer = new Customer();
-
-        customer.Name = name;
-        customer.Address = adress;
-        customer.UserName = userName;
-        customer.PhoneNumber = phoneNumber;
-        customer.Password = password;
-
-        BookStore.Customers.Add(customer);
-
-        MessageBox.Show("Registrated is successful! Welcome :)");
-    }
-
-    // (works)
-    public void SearchBook(string name)
-    {
-        foreach (var book in BookStore.Books)
-        {
-            if (book.Name.Equals(name))
-            {
-                MessageBox.Show("The book that you are looking at available. Piece: " + book.BookCount);
-                return;
-            }
-        }
-        MessageBox.Show("The book is not available.");
-    }
-
-
     // EMPLOYEE
     //*********
 

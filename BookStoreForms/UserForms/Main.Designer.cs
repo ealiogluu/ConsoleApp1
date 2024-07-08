@@ -79,7 +79,7 @@
             // 
             this.listBooks.FormattingEnabled = true;
             this.listBooks.ItemHeight = 16;
-            this.listBooks.Location = new System.Drawing.Point(159, 194);
+            this.listBooks.Location = new System.Drawing.Point(161, 152);
             this.listBooks.Margin = new System.Windows.Forms.Padding(4);
             this.listBooks.Name = "listBooks";
             this.listBooks.Size = new System.Drawing.Size(519, 452);

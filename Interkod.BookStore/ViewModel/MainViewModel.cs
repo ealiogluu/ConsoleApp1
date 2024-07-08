@@ -4,14 +4,16 @@ using System.Windows.Controls;
 
 namespace Interkod.BookStore.ViewModel;
 
-public class MainWindoViewModel
+public class MainViewModel
 {
     public Order Order { get; set; } = new Order();
     public List<OrderItem> Basket { get; set; }
     public BookStore1 BookStore { get; set; } = new BookStore1();
 
-    public MainWindoViewModel()
+    public MainViewModel()
     {
+        
+
         Book book1 = new("Suç", "Ahmet", 56,3.456, 67.90);
         Book book3 = new("yasak", "hamdi", 100,7.889, 110);
         Book book4 = new("Kezzap", "ayşe", 56,980, 23);
@@ -63,14 +65,6 @@ public class MainWindoViewModel
             if (book.Id.Equals(id)) Order.OrderItems.Remove(book);
 
     }
-
-    public void CheckOut()
-    {
-        Button button = new Button();
-
-
-    }
-
 
     //CUSTOMER
     //********

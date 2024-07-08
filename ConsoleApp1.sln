@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinav", "Sinav\Sinav.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interkod.BookStore", "Interkod.BookStore\Interkod.BookStore.csproj", "{3A024AE6-3F00-42CB-BB8D-ED9E0AC6D7F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DenemeWpf", "DenemeWpf\DenemeWpf.csproj", "{17501CEB-A10B-447B-9CA5-472ABCB102E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DenemeWpf", "DenemeWpf\DenemeWpf.csproj", "{17501CEB-A10B-447B-9CA5-472ABCB102E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

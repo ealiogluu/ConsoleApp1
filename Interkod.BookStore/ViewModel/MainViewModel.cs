@@ -1,4 +1,5 @@
 ﻿using Interkod.BookStore.Models;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -7,8 +8,10 @@ namespace Interkod.BookStore.ViewModel;
 public class MainViewModel
 {
     public Order Order { get; set; } = new Order();
-    public List<OrderItem> Basket { get; set; }
+    public ObservableCollection<OrderItem> Basket { get; set; } = new ObservableCollection<OrderItem>();
     public BookStore1 BookStore { get; set; } = new BookStore1();
+    public Book SelectedBook { get; set; } = new Book();
+    public Book SelectedBasketItem { get; set; } = new Book();    
 
     public MainViewModel()
     {
@@ -18,12 +21,15 @@ public class MainViewModel
         Book book3 = new("yasak", "hamdi", 100,7.889, 110);
         Book book4 = new("Kezzap", "ayşe", 56,980, 23);
 
+
+         
+
         BookStore.Books.Add(book1);
         BookStore.Books.Add(book3);
         BookStore.Books.Add(book4);
 
-        Customer customer  = new Customer("ayse", 1, "ayse", "baris", 67583456);
-        Customer customer2 = new Customer("burcu", 2, "burcu", "kurtkoy", 43756);
+        Customer customer  = new Customer("ayse", "1", "ayse", "baris", "3759326");
+        Customer customer2 = new Customer("burcu", "2", "burcu", "kurtkoy", "74293275");
         BookStore.Customers.Add(customer);
         BookStore.Customers.Add(customer2); 
     }
@@ -33,7 +39,7 @@ public class MainViewModel
         Random rnd = new Random();
         var order = new Order();
 
-        order.OrderItems = Basket;
+        //order.OrderItems = Basket;
         order.OrderNumber = rnd.Next();
         MessageBox.Show($"Order {order.OrderNumber} created.");
 
@@ -49,12 +55,12 @@ public class MainViewModel
     }
 
     // Reduces book count (works)
-    public void ReduceOrderItem(int id)
+    public void ReduceOrderItem(Book book)
     {
-        foreach (var book in Order.OrderItems)
+        foreach (var b in Order.OrderItems)
         {
-            if (book.Id == id) book.Quantity--;
-            if (book.Quantity.Equals(0)) Order.OrderItems.Remove(book);
+            if (b.Book == book) b.Quantity--;
+            if (b.Quantity.Equals(0)) Order.OrderItems.Remove(b);
         }
     }
 
@@ -100,4 +106,35 @@ public class MainViewModel
         foreach (var book in BookStore.Books)
             if (book.Name.Equals(bookName)) BookStore.Books.Remove(book);
     }
+
+
+    public void SignUp(string name, string adress, string userName, string phoneNumber, string password)
+    {
+        var customer = new Customer();
+
+        customer.Name = name;
+        customer.Address = adress;
+        customer.UserName = userName;
+        customer.PhoneNumber = phoneNumber;
+        customer.Password = password;
+
+        BookStore.Customers.Add(customer);
+
+        MessageBox.Show("Registrated is successful! Welcome :)");
+    }
+
+    public void SearchBook(string name)
+    {
+        foreach (var book in BookStore.Books)
+        {
+            if (book.Name.Equals(name))
+            {
+                MessageBox.Show("The book that you are looking at available. Piece: " + book.BookCount);
+                return;
+            }
+        }
+        MessageBox.Show("The book is not available.");
+    }
+
+
 }

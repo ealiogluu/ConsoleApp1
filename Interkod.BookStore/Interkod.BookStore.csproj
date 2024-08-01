@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="View\" />
+    <None Remove="images\indir %281%29.png" />
+    <None Remove="images\indir.jpeg" />
+    <None Remove="images\search-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\indir (1).png" />
+    <Resource Include="images\indir.jpeg" />
+    <Resource Include="images\search-icon.png" />
   </ItemGroup>
 
 </Project>

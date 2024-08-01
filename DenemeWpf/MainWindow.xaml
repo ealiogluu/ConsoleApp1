@@ -11,29 +11,7 @@
     Height="450"
     mc:Ignorable="d">
 
-    <Grid
-        Height="435"
-        Margin="0,-1,0,0"
-        VerticalAlignment="Top"
-        RenderTransformOrigin="0.5,0.5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="26*" />
-            <RowDefinition Height="119*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="91*" />
-            <ColumnDefinition Width="709*" />
-        </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="ASDASD" />
-            <TextBox x:Name="txtMain" Height="50" />
-            <TextBox Height="50" Text="{Binding ElementName=txtMain, Path=Text}" />
-        </StackPanel>
+    <Grid >
 
-        <DataGrid
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="2"
-            AutoGenerateColumns="True"
-            ItemsSource="{Binding BookNames}" />
     </Grid>
 </Window>

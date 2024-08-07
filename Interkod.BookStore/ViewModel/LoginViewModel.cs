@@ -12,8 +12,10 @@ namespace Interkod.BookStore.ViewModel
     {
         MainViewModel viewModel = new MainViewModel();
         LogInPage LogInPage { get; set; } = new LogInPage();
+        public string Username { get; set; }
+        public string Password { get; set; }
 
-        public RelayCommand LogInCommand => new RelayCommand(execute => { LogIn(LogInPage.textBox_LogIn.Text, LogInPage.passwordBox_LogIn.Password); }, canExecute => { return true; });
+        public RelayCommand LogInCommand => new RelayCommand(execute => { LogIn(Username, Password); }, canExecute => { return true; });
 
         public void LogIn(string userName, string password)
         {

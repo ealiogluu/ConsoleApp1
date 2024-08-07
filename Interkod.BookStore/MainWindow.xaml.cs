@@ -1,4 +1,5 @@
 ﻿using Interkod.BookStore.Models;
+using Interkod.BookStore.MVVM;
 using Interkod.BookStore.ViewModel;
 using System.Windows;
 
@@ -15,9 +16,9 @@ namespace Interkod.BookStore
             InitializeComponent();
             VM = new MainViewModel();
             DataContext = VM;
-
         }
 
+        RelayCommand OpenLogInPageCommand => new RelayCommand(execute => VM.OpenLogInPage());
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -30,10 +31,4 @@ namespace Interkod.BookStore
             VM.ReduceOrderItem(VM.SelectedBasketItem);
         }
 
-        private void Button_Click_LogIn(object sender, RoutedEventArgs e)
-        {
-           LogInPage logInPage = new LogInPage();
-            this.Visibility = Visibility.Visible; 
-            logInPage.Show();
-        }
     } }

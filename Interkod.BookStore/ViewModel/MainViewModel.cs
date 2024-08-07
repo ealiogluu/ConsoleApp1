@@ -135,6 +135,11 @@ public class MainViewModel
         }
         MessageBox.Show("The book is not available.");
     }
+    public void OpenLogInPage()
+    {
+        LogInPage logInPage = new LogInPage();
+        logInPage.Show();
+    }
 
 
 }

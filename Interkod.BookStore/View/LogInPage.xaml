@@ -11,7 +11,7 @@
     mc:Ignorable="d">
     <Grid>
 
-        <Grid.RowDefinitions >
+        <Grid.RowDefinitions>
             <RowDefinition Height="90" />
             <RowDefinition />
             <RowDefinition />
@@ -35,12 +35,13 @@
             FontSize="26"
             Text="User Name" />
         <TextBox
+            Name="textBox_LogIn"
             Grid.Row="2"
             Width="300"
             Height="50"
             Margin="10,0,0,0"
-            HorizontalAlignment="Left" 
-            Name="textBox_LogIn"/>
+            HorizontalAlignment="Left"
+            Text="{Binding VM.Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
 
         <TextBlock
             Grid.Row="3"
@@ -48,15 +49,25 @@
             VerticalAlignment="Center"
             FontSize="26"
             Text="Password" />
-        <PasswordBox
+        <TextBox
+            Name="passwordBox_LogIn"
             Grid.Row="4"
             Width="300"
             Height="50"
             Margin="10,0,0,0"
-            HorizontalAlignment="Left" 
-            Name="passwordBox_LogIn"/>
-        <Button 
-           Command="{Binding LogInCommand}" Grid.Row="5" Width="100" HorizontalAlignment="Right" Margin="0,0,9,0" BorderBrush="Red" BorderThickness="4,4,4,4" Content="Log In" FontSize="25" Background="White"/>
+            HorizontalAlignment="Left"
+            Text="{Binding VM.Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <Button
+            Grid.Row="5"
+            Width="100"
+            Margin="0,0,9,0"
+            HorizontalAlignment="Right"
+            Background="White"
+            BorderBrush="Red"
+            BorderThickness="4,4,4,4"
+            Command="{Binding VM.LogInCommand}"
+            Content="Log In"
+            FontSize="25" />
 
 
     </Grid>

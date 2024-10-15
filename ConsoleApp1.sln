@@ -35,7 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interkod.BookStore", "Inter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DenemeWpf", "DenemeWpf\DenemeWpf.csproj", "{17501CEB-A10B-447B-9CA5-472ABCB102E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interkod.NewBookStore", "Interkod.NewBookStore\Interkod.NewBookStore.csproj", "{4EA68D74-E58D-4485-B2A0-F262A9FFCCB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interkod.NewBookStore", "Interkod.NewBookStore\Interkod.NewBookStore.csproj", "{4EA68D74-E58D-4485-B2A0-F262A9FFCCB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkLabel_DataStructures", "LinkLabel_DataStructures\LinkLabel_DataStructures.csproj", "{6FC27954-9CEC-40FA-9C36-1A492D2ABD64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkLabelDataStructures", "LinkLabelDataStructures\LinkLabelDataStructures.csproj", "{036AE58E-9440-4638-9C98-6420B46F8BE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +115,14 @@ Global
 		{4EA68D74-E58D-4485-B2A0-F262A9FFCCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EA68D74-E58D-4485-B2A0-F262A9FFCCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EA68D74-E58D-4485-B2A0-F262A9FFCCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC27954-9CEC-40FA-9C36-1A492D2ABD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC27954-9CEC-40FA-9C36-1A492D2ABD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC27954-9CEC-40FA-9C36-1A492D2ABD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC27954-9CEC-40FA-9C36-1A492D2ABD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{036AE58E-9440-4638-9C98-6420B46F8BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{036AE58E-9440-4638-9C98-6420B46F8BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{036AE58E-9440-4638-9C98-6420B46F8BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{036AE58E-9440-4638-9C98-6420B46F8BE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
